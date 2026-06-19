@@ -78,6 +78,8 @@ src/
 │   │   ├── ButtonElement.ts    # Targets buttons, anchors, and submit inputs
 │   │   ├── InputElement.ts     # Targets inputs/textareas; types a value after click
 │   │   ├── GenericElement.ts   # Broad fallback for any interactive element
+│   │   ├── WaitElement.ts      # Pauses automation to allow for manual user intervention
+│   │   ├── FlutterElement.ts   # Specialized element for interacting with Flutter Web canvas
 │   │   └── ElementFactory.ts   # Factory: maps JSON type strings to class instances
 │   └── exceptions/
 │       ├── BaseException.ts        # Base error class with structured context
