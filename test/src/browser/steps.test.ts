@@ -121,15 +121,38 @@ describe('Steps Logic', () => {
         const { mockPage, mockFrame } = createMockPage('execute');
 
         // Element with innerText
-        const mockElText = { innerText: 'Target', getAttribute: jest.fn().mockReturnValue('') };
+        const mockElText = {
+            innerText: 'Target',
+            getAttribute: jest.fn().mockReturnValue(''),
+            contains: jest.fn().mockReturnValue(false),
+            children: []
+        };
         // Element with value
-        const mockElValue = { value: 'Target', getAttribute: jest.fn().mockReturnValue('') };
+        const mockElValue = {
+            value: 'Target',
+            getAttribute: jest.fn().mockReturnValue(''),
+            contains: jest.fn().mockReturnValue(false),
+            children: []
+        };
         // Element with placeholder
-        const mockElPlaceholder = { placeholder: 'Target', getAttribute: jest.fn().mockReturnValue('') };
+        const mockElPlaceholder = {
+            placeholder: 'Target',
+            getAttribute: jest.fn().mockReturnValue(''),
+            contains: jest.fn().mockReturnValue(false),
+            children: []
+        };
         // Element with aria-label
-        const mockElAria = { getAttribute: jest.fn().mockReturnValue('Target') };
+        const mockElAria = {
+            getAttribute: jest.fn().mockReturnValue('Target'),
+            contains: jest.fn().mockReturnValue(false),
+            children: []
+        };
         // Element with nothing
-        const mockElNothing = { getAttribute: jest.fn().mockReturnValue(null) };
+        const mockElNothing = {
+            getAttribute: jest.fn().mockReturnValue(null),
+            contains: jest.fn().mockReturnValue(false),
+            children: []
+        };
 
         global.document = {
             querySelectorAll: jest
@@ -180,6 +203,74 @@ describe('Steps Logic', () => {
         ]);
 
         expect(mockEl.focus).toHaveBeenCalled();
+        expect(mockEl.click).toHaveBeenCalled();
+
+        delete (global as any).document;
+    });
+
+    it('executeSteps handles WaitElement with waitFlag ID by waiting for tab close', async () => {
+        const { mockPage } = createMockPage('true');
+
+        // Mock browser.pages() to simulate a tab closing
+        const mockBrowser = {
+            pages: jest
+                .fn()
+                .mockResolvedValueOnce([mockPage, mockPage]) // initial check (length: 2)
+                .mockResolvedValueOnce([mockPage, mockPage]) // current === initial (covers false branch of line 39)
+                .mockResolvedValueOnce([mockPage, mockPage, mockPage]) // current > initial (length: 3)
+                .mockResolvedValueOnce([mockPage]) // tab closed! (length: 1)
+        };
+        mockPage.browser = jest.fn().mockReturnValue(mockBrowser);
+
+        await executeSteps(mockPage as any, [
+            { index: 0, element: { type: 'WaitElement', metadata: { id: 'waitFlag' } } }
+        ]);
+
+        expect(mockBrowser.pages).toHaveBeenCalledTimes(4);
+    });
+
+    it('executeSteps handles WaitElement standard flow inside evaluate', async () => {
+        const { mockPage, mockFrame } = createMockPage('execute');
+
+        const mockEl = {
+            innerText: 'Target',
+            addEventListener: jest.fn((event, cb) => cb()),
+            contains: jest.fn().mockReturnValue(false),
+            children: []
+        };
+
+        global.document = {
+            querySelectorAll: jest.fn().mockReturnValue([mockEl])
+        } as any;
+
+        await executeSteps(mockPage as any, [
+            { index: 0, element: { type: 'WaitElement', metadata: { text: 'Target' } } }
+        ]);
+
+        expect(mockEl.addEventListener).toHaveBeenCalledWith('click', expect.any(Function), { once: true });
+
+        delete (global as any).document;
+    });
+
+    it('executeSteps handles FlutterElement click', async () => {
+        const { mockPage, mockFrame } = createMockPage('execute');
+
+        const mockEl = {
+            textContent: 'Target',
+            focus: jest.fn(),
+            click: jest.fn(),
+            contains: jest.fn().mockReturnValue(false),
+            children: []
+        };
+
+        global.document = {
+            querySelectorAll: jest.fn().mockReturnValue([mockEl])
+        } as any;
+
+        await executeSteps(mockPage as any, [
+            { index: 0, element: { type: 'FlutterElement', metadata: { text: 'Target' } } }
+        ]);
+
         expect(mockEl.click).toHaveBeenCalled();
 
         delete (global as any).document;
