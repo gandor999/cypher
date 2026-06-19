@@ -1,11 +1,13 @@
-# GoTrade Puppeteer App
+# Puppeteer Automation Engine
 
-A Node.js application that uses [Puppeteer](https://pptr.dev/) to open Google Chrome (or its bundled Chromium) and navigate directly to GoTrade.
+A highly flexible, JSON-driven Node.js automation framework built with [Puppeteer](https://pptr.dev/), TypeScript, and Express. 
+
+This engine is capable of automating interactions on **any** website. It reads an ordered list of tasks from a JSON configuration file and dynamically parses, locates, and interacts with elements on the page using a rich Object-Oriented class factory.
 
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (v16.0.0 or higher recommended)
-- Google Chrome installed on your machine (optional, the script will fall back to Puppeteer's bundled browser if not found)
+- Google Chrome installed on your machine (optional; the script will fall back to Puppeteer's bundled Chromium if Chrome is not found in standard paths)
 
 ## Installation
 
@@ -15,24 +17,58 @@ Install the project dependencies:
 npm install
 ```
 
+## Configuration
+
+Configure your environment variables in a `.env` file at the root of the project:
+
+```env
+TARGET_URL=https://example.com
+STEPS_FILE_PATH=steps/steps.json
+```
+
+### Automation Steps (`steps/steps.json`)
+
+Define exactly what elements to click and in what order using the `steps.json` file. The engine uses an `ElementFactory` to map JSON types directly into TypeScript objects.
+
+```json
+[
+  {
+    "element": {
+      "type": "ButtonElement",
+      "metadata": {
+        "text": "Log In",
+        "id": "login-btn",
+        "class": "btn-primary"
+      }
+    },
+    "index": 0
+  }
+]
+```
+
 ## Running the Application
 
-To run the application and open GoTrade:
+This application comes with a built-in Express server that provides a clean HTTP API and a modern web GUI to control the automation.
 
 ```bash
-node index.js
+npm start
 ```
+
+1. Open your browser to the URL displayed in your console (e.g. `http://localhost:3000`).
+2. Click **Start Automation** to launch Chrome and execute the configured steps.
+3. Click **Cancel Automation** to gracefully shut down the active browser instance.
 
 ## How It Works
 
-1. **Locates Chrome**: The script searches standard installation paths on Windows for Google Chrome.
-2. **Launches Chrome**: It launches Google Chrome (or bundled browser) in headful mode (non-headless) so you can see and interact with the page.
-3. **Navigates to GoTrade**: It opens a new tab and navigates directly to the official [GoTrade website](https://www.heygotrade.com/).
-4. **Interactive**: The browser remains open for you to log in, trade, or inspect the application.
+1. **Locates Chrome**: The script searches standard installation paths for Google Chrome.
+2. **Launches Chrome**: It launches Google Chrome in headful mode (non-headless) so you can see and interact with the page alongside the automation.
+3. **JSON Parsing**: The engine parses the configured steps.json file.
+4. **Dynamic Execution**: Through an object-oriented factory, the engine locates and safely evaluates elements directly inside the browser's DOM based on your configuration parameters.
 
-## Customization
+## Testing
 
-You can change the target URL or configure the launch options in `index.js`:
+The project is thoroughly tested using Jest with **100% test coverage**.
 
-- **Change URL**: Update the `targetUrl` constant in `index.js`.
-- **Change Headless mode**: Change `headless: false` to `headless: true` if you want the script to run invisibly in the background.
+```bash
+npm run test
+```
