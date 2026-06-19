@@ -50,7 +50,7 @@ Provide these fields within the `metadata` object to help the engine uniquely id
     "element": {
       "type": "FlutterElement",
       "metadata": {
-        "text": "Portfolio"
+        "text": "Discover"
       }
     },
     "index": 0
