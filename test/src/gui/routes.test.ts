@@ -12,7 +12,7 @@ describe('GUI API Routes', () => {
         const res = await request(app).post('/api/start-automation');
         expect(res.status).toBe(200);
         expect(res.body.success).toBe(true);
-        expect(browser.launchAndNavigate).toHaveBeenCalled();
+        expect(browser.launchAndNavigate).toHaveBeenCalledWith('https://test.com', undefined);
     });
 
     it('POST /api/start-automation should handle errors', async () => {
@@ -21,7 +21,7 @@ describe('GUI API Routes', () => {
         // It returns 200 immediately, but logs the error in the background.
         expect(res.status).toBe(200);
         // Wait for microtasks to finish the rejection
-        await new Promise(resolve => setTimeout(resolve, 0));
+        await new Promise((resolve) => setTimeout(resolve, 0));
     });
 
     it('POST /api/cancel-automation should call cancelAutomation', async () => {
@@ -37,6 +37,6 @@ describe('GUI API Routes', () => {
         expect(res.status).toBe(500);
         expect(res.body.success).toBe(false);
         // Wait for microtasks to finish the rejection
-        await new Promise(resolve => setTimeout(resolve, 0));
+        await new Promise((resolve) => setTimeout(resolve, 0));
     });
 });

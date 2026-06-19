@@ -25,7 +25,9 @@ describe('Browser Launcher', () => {
         };
 
         mockPage = {
-            goto: jest.fn().mockResolvedValue(true)
+            goto: jest.fn().mockResolvedValue(true),
+            waitForSelector: jest.fn().mockResolvedValue(true),
+            evaluate: jest.fn().mockResolvedValue(true)
         };
 
         mockBrowser = {

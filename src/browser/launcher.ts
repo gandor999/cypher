@@ -1,8 +1,10 @@
-import puppeteer, { Browser } from 'puppeteer';
+import puppeteer, { Browser, Page } from 'puppeteer';
 import fs from 'fs';
+import path from 'path';
 import { CHROME_PATHS } from '../constants';
 import logger from '../logger';
 import { NavigationException } from '../classes/exceptions';
+import { getSteps, executeSteps } from './steps';
 
 function findLocalChrome(): string | null {
     for (const chromePath of CHROME_PATHS) {
@@ -16,6 +18,8 @@ function findLocalChrome(): string | null {
 let activeBrowser: Browser | null = null;
 
 export async function launchAndNavigate(targetUrl: string): Promise<void> {
+    const stepsPath = process.env.STEPS_FILE_PATH;
+    const finalSteps = getSteps(stepsPath);
     if (activeBrowser) {
         logger.info('Browser is already running.');
         return;
@@ -57,6 +61,8 @@ export async function launchAndNavigate(targetUrl: string): Promise<void> {
             waitUntil: 'domcontentloaded',
             timeout: 60000
         });
+
+        await executeSteps(page, finalSteps);
     } catch (error) {
         throw new NavigationException(targetUrl, error);
     }

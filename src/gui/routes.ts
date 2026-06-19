@@ -12,8 +12,9 @@ router.post('/start-automation', async (req, res) => {
         res.json({ success: true, message: 'Automation starting...' });
 
         // Run the automation asynchronously
-        await launchAndNavigate(TARGET_URL);
-        logger.info('Automation completed successfully.');
+        launchAndNavigate(TARGET_URL)
+            .then(() => logger.info('Automation completed successfully.'))
+            .catch((error) => logger.error(error));
     } catch (error) {
         logger.error(error);
     }

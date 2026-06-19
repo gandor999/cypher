@@ -1,1 +1,962 @@
-{"numFailedTestSuites":2,"numFailedTests":0,"numPassedTestSuites":4,"numPassedTests":16,"numPendingTestSuites":0,"numPendingTests":0,"numRuntimeErrorTestSuites":2,"numTodoTests":0,"numTotalTestSuites":6,"numTotalTests":16,"openHandles":[],"snapshot":{"added":0,"didUpdate":false,"failure":false,"filesAdded":0,"filesRemoved":0,"filesRemovedList":[],"filesUnmatched":0,"filesUpdated":0,"matched":0,"total":0,"unchecked":0,"uncheckedKeysByFile":[],"unmatched":0,"updated":0},"startTime":1781866197441,"success":false,"testResults":[{"assertionResults":[],"coverage":{},"endTime":1781866203735,"message":"  ● Test suite failed to run\n\n    \u001b[96mtest/src/logger.test.ts\u001b[0m:\u001b[93m1\u001b[0m:\u001b[93m10\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2614: \u001b[0mModule '\"../../src/logger\"' has no exported member 'logger'. Did you mean to use 'import logger from \"../../src/logger\"' instead?\n\n    \u001b[7m1\u001b[0m import { logger } from '../../src/logger';\n    \u001b[7m \u001b[0m \u001b[91m         ~~~~~~\u001b[0m\n","name":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\logger.test.ts","startTime":1781866203735,"status":"failed","summary":""},{"assertionResults":[],"coverage":{},"endTime":1781866203735,"message":"  ● Test suite failed to run\n\n    \u001b[96mtest/src/server.test.ts\u001b[0m:\u001b[93m2\u001b[0m:\u001b[93m15\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2305: \u001b[0mModule '\"../../src/server\"' has no exported member 'server'.\n\n    \u001b[7m2\u001b[0m import { app, server } from '../../src/server';\n    \u001b[7m \u001b[0m \u001b[91m              ~~~~~~\u001b[0m\n","name":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\server.test.ts","startTime":1781866203735,"status":"failed","summary":""},{"assertionResults":[{"ancestorTitles":["Web Scraper"],"duration":8,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Web Scraper should extract correct elements matching a keyword","invocations":1,"location":null,"numPassingAsserts":6,"retryReasons":[],"startAt":1781866202714,"status":"passed","title":"should extract correct elements matching a keyword"}],"endTime":1781866202724,"message":"","name":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\web_scraper\\scraper.test.ts","startTime":1781866198309,"status":"passed","summary":""},{"assertionResults":[{"ancestorTitles":["Exceptions"],"duration":6,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Exceptions BaseException generates a valid UUID and sets properties correctly","invocations":1,"location":null,"numPassingAsserts":4,"retryReasons":[],"startAt":1781866202729,"status":"passed","title":"BaseException generates a valid UUID and sets properties correctly"},{"ancestorTitles":["Exceptions"],"duration":1,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Exceptions BaseException defaults to true operational","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866202735,"status":"passed","title":"BaseException defaults to true operational"},{"ancestorTitles":["Exceptions"],"duration":1,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Exceptions NavigationException defaults to true operational and custom message","invocations":1,"location":null,"numPassingAsserts":3,"retryReasons":[],"startAt":1781866202736,"status":"passed","title":"NavigationException defaults to true operational and custom message"},{"ancestorTitles":["Exceptions"],"duration":0,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Exceptions NavigationException handles string error properly","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866202737,"status":"passed","title":"NavigationException handles string error properly"}],"endTime":1781866202739,"message":"","name":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\classes\\exceptions\\index.test.ts","startTime":1781866198327,"status":"passed","summary":""},{"assertionResults":[{"ancestorTitles":["Browser Launcher"],"duration":14,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Browser Launcher launchAndNavigate finds local chrome and launches successfully","invocations":1,"location":null,"numPassingAsserts":2,"retryReasons":[],"startAt":1781866202976,"status":"passed","title":"launchAndNavigate finds local chrome and launches successfully"},{"ancestorTitles":["Browser Launcher"],"duration":3,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Browser Launcher launchAndNavigate uses bundled browser if local chrome is not found","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866202990,"status":"passed","title":"launchAndNavigate uses bundled browser if local chrome is not found"},{"ancestorTitles":["Browser Launcher"],"duration":3,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Browser Launcher launchAndNavigate does not launch a new browser if one is already active","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866202994,"status":"passed","title":"launchAndNavigate does not launch a new browser if one is already active"},{"ancestorTitles":["Browser Launcher"],"duration":3,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Browser Launcher launchAndNavigate creates a new page if no pages exist","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866202997,"status":"passed","title":"launchAndNavigate creates a new page if no pages exist"},{"ancestorTitles":["Browser Launcher"],"duration":10,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Browser Launcher launchAndNavigate throws NavigationException when navigation fails","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866203000,"status":"passed","title":"launchAndNavigate throws NavigationException when navigation fails"},{"ancestorTitles":["Browser Launcher"],"duration":5,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Browser Launcher cancelAutomation handles close exceptions and exits process","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866203010,"status":"passed","title":"cancelAutomation handles close exceptions and exits process"},{"ancestorTitles":["Browser Launcher"],"duration":4,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"Browser Launcher handles browser disconnect event","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866203015,"status":"passed","title":"handles browser disconnect event"}],"endTime":1781866203020,"message":"","name":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\browser\\launcher.test.ts","startTime":1781866198321,"status":"passed","summary":""},{"assertionResults":[{"ancestorTitles":["GUI API Routes"],"duration":43,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"GUI API Routes POST /api/start-automation should call launchAndNavigate","invocations":1,"location":null,"numPassingAsserts":3,"retryReasons":[],"startAt":1781866203262,"status":"passed","title":"POST /api/start-automation should call launchAndNavigate"},{"ancestorTitles":["GUI API Routes"],"duration":12,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"GUI API Routes POST /api/start-automation should handle errors","invocations":1,"location":null,"numPassingAsserts":1,"retryReasons":[],"startAt":1781866203305,"status":"passed","title":"POST /api/start-automation should handle errors"},{"ancestorTitles":["GUI API Routes"],"duration":6,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"GUI API Routes POST /api/cancel-automation should call cancelAutomation","invocations":1,"location":null,"numPassingAsserts":3,"retryReasons":[],"startAt":1781866203317,"status":"passed","title":"POST /api/cancel-automation should call cancelAutomation"},{"ancestorTitles":["GUI API Routes"],"duration":6,"failing":false,"failureDetails":[],"failureMessages":[],"fullName":"GUI API Routes POST /api/cancel-automation should handle errors","invocations":1,"location":null,"numPassingAsserts":2,"retryReasons":[],"startAt":1781866203323,"status":"passed","title":"POST /api/cancel-automation should handle errors"}],"endTime":1781866203330,"message":"","name":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\gui\\routes.test.ts","startTime":1781866198327,"status":"passed","summary":""}],"wasInterrupted":false,"coverageMap":{"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\web_scraper\\scraper.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\web_scraper\\scraper.ts","statementMap":{"0":{"start":{"line":3,"column":0},"end":{"line":3,"column":7}},"1":{"start":{"line":1,"column":0},"end":{"line":1,"column":34}},"2":{"start":{"line":4,"column":20},"end":{"line":4,"column":62}},"3":{"start":{"line":5,"column":17},"end":{"line":5,"column":40}},"4":{"start":{"line":6,"column":4},"end":{"line":6,"column":56}},"5":{"start":{"line":8,"column":21},"end":{"line":24,"column":15}},"6":{"start":{"line":9,"column":31},"end":{"line":9,"column":33}},"7":{"start":{"line":10,"column":8},"end":{"line":22,"column":11}},"8":{"start":{"line":11,"column":26},"end":{"line":11,"column":35}},"9":{"start":{"line":12,"column":25},"end":{"line":12,"column":111}},"10":{"start":{"line":13,"column":12},"end":{"line":21,"column":13}},"11":{"start":{"line":14,"column":16},"end":{"line":20,"column":19}},"12":{"start":{"line":23,"column":8},"end":{"line":23,"column":23}},"13":{"start":{"line":27,"column":26},"end":{"line":27,"column":28}},"14":{"start":{"line":28,"column":17},"end":{"line":28,"column":26}},"15":{"start":{"line":29,"column":4},"end":{"line":36,"column":5}},"16":{"start":{"line":30,"column":8},"end":{"line":30,"column":55}},"17":{"start":{"line":30,"column":46},"end":{"line":30,"column":55}},"18":{"start":{"line":31,"column":20},"end":{"line":31,"column":42}},"19":{"start":{"line":32,"column":8},"end":{"line":35,"column":9}},"20":{"start":{"line":33,"column":12},"end":{"line":33,"column":26}},"21":{"start":{"line":34,"column":12},"end":{"line":34,"column":28}},"22":{"start":{"line":38,"column":4},"end":{"line":38,"column":26}},"23":{"start":{"line":39,"column":4},"end":{"line":39,"column":18}},"24":{"start":{"line":42,"column":0},"end":{"line":52,"column":1}},"25":{"start":{"line":43,"column":16},"end":{"line":43,"column":63}},"26":{"start":{"line":44,"column":20},"end":{"line":44,"column":41}},"27":{"start":{"line":46,"column":4},"end":{"line":46,"column":64}},"28":{"start":{"line":47,"column":4},"end":{"line":51,"column":44}},"29":{"start":{"line":49,"column":12},"end":{"line":49,"column":57}},"30":{"start":{"line":51,"column":24},"end":{"line":51,"column":42}}},"fnMap":{"0":{"name":"scrape","decl":{"start":{"line":3,"column":22},"end":{"line":3,"column":28}},"loc":{"start":{"line":3,"column":57},"end":{"line":40,"column":1}}},"1":{"name":"(anonymous_2)","decl":{"start":{"line":8,"column":41},"end":{"line":8,"column":42}},"loc":{"start":{"line":8,"column":53},"end":{"line":24,"column":5}}},"2":{"name":"(anonymous_3)","decl":{"start":{"line":10,"column":73},"end":{"line":10,"column":74}},"loc":{"start":{"line":10,"column":80},"end":{"line":22,"column":9}}},"3":{"name":"(anonymous_4)","decl":{"start":{"line":48,"column":14},"end":{"line":48,"column":15}},"loc":{"start":{"line":48,"column":25},"end":{"line":50,"column":9}}},"4":{"name":"(anonymous_5)","decl":{"start":{"line":51,"column":15},"end":{"line":51,"column":16}},"loc":{"start":{"line":51,"column":24},"end":{"line":51,"column":42}}}},"branchMap":{"0":{"loc":{"start":{"line":12,"column":26},"end":{"line":12,"column":83}},"type":"binary-expr","locations":[{"start":{"line":12,"column":26},"end":{"line":12,"column":41}},{"start":{"line":12,"column":45},"end":{"line":12,"column":62}},{"start":{"line":12,"column":66},"end":{"line":12,"column":77}},{"start":{"line":12,"column":81},"end":{"line":12,"column":83}}]},"1":{"loc":{"start":{"line":13,"column":12},"end":{"line":21,"column":13}},"type":"if","locations":[{"start":{"line":13,"column":12},"end":{"line":21,"column":13}},{"start":{},"end":{}}]},"2":{"loc":{"start":{"line":13,"column":16},"end":{"line":13,"column":88}},"type":"binary-expr","locations":[{"start":{"line":13,"column":16},"end":{"line":13,"column":20}},{"start":{"line":13,"column":25},"end":{"line":13,"column":33}},{"start":{"line":13,"column":37},"end":{"line":13,"column":87}}]},"3":{"loc":{"start":{"line":18,"column":24},"end":{"line":18,"column":37}},"type":"binary-expr","locations":[{"start":{"line":18,"column":24},"end":{"line":18,"column":29}},{"start":{"line":18,"column":33},"end":{"line":18,"column":37}}]},"4":{"loc":{"start":{"line":19,"column":26},"end":{"line":19,"column":44}},"type":"binary-expr","locations":[{"start":{"line":19,"column":26},"end":{"line":19,"column":36}},{"start":{"line":19,"column":40},"end":{"line":19,"column":44}}]},"5":{"loc":{"start":{"line":30,"column":8},"end":{"line":30,"column":55}},"type":"if","locations":[{"start":{"line":30,"column":8},"end":{"line":30,"column":55}},{"start":{},"end":{}}]},"6":{"loc":{"start":{"line":30,"column":12},"end":{"line":30,"column":44}},"type":"binary-expr","locations":[{"start":{"line":30,"column":12},"end":{"line":30,"column":20}},{"start":{"line":30,"column":24},"end":{"line":30,"column":44}}]},"7":{"loc":{"start":{"line":32,"column":8},"end":{"line":35,"column":9}},"type":"if","locations":[{"start":{"line":32,"column":8},"end":{"line":35,"column":9}},{"start":{},"end":{}}]},"8":{"loc":{"start":{"line":42,"column":0},"end":{"line":52,"column":1}},"type":"if","locations":[{"start":{"line":42,"column":0},"end":{"line":52,"column":1}},{"start":{},"end":{}}]},"9":{"loc":{"start":{"line":43,"column":16},"end":{"line":43,"column":63}},"type":"binary-expr","locations":[{"start":{"line":43,"column":16},"end":{"line":43,"column":31}},{"start":{"line":43,"column":35},"end":{"line":43,"column":63}}]},"10":{"loc":{"start":{"line":44,"column":20},"end":{"line":44,"column":41}},"type":"binary-expr","locations":[{"start":{"line":44,"column":20},"end":{"line":44,"column":35}},{"start":{"line":44,"column":39},"end":{"line":44,"column":41}}]}},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":0,"7":0,"8":0,"9":0,"10":0,"11":0,"12":0,"13":1,"14":1,"15":1,"16":2,"17":0,"18":2,"19":2,"20":1,"21":1,"22":1,"23":1,"24":1,"25":0,"26":0,"27":0,"28":0,"29":0,"30":0},"f":{"0":1,"1":0,"2":0,"3":0,"4":0},"b":{"0":[0,0,0,0],"1":[0,0],"2":[0,0,0],"3":[0,0],"4":[0,0],"5":[0,2],"6":[2,2],"7":[1,1],"8":[0,1],"9":[0,0],"10":[0,0]}},"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\index.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\index.ts","statementMap":{"0":{"start":{"line":1,"column":0},"end":{"line":1,"column":32}},"1":{"start":{"line":2,"column":0},"end":{"line":2,"column":38}}},"fnMap":{},"branchMap":{},"s":{"0":2,"1":2},"f":{},"b":{}},"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\BaseException.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\BaseException.ts","statementMap":{"0":{"start":{"line":1,"column":0},"end":{"line":1,"column":28}},"1":{"start":{"line":9,"column":8},"end":{"line":9,"column":27}},"2":{"start":{"line":11,"column":8},"end":{"line":11,"column":58}},"3":{"start":{"line":13,"column":8},"end":{"line":13,"column":38}},"4":{"start":{"line":14,"column":8},"end":{"line":14,"column":25}},"5":{"start":{"line":15,"column":8},"end":{"line":15,"column":43}},"6":{"start":{"line":17,"column":8},"end":{"line":17,"column":56}},"7":{"start":{"line":3,"column":0},"end":{"line":3,"column":13}}},"fnMap":{"0":{"name":"(anonymous_1)","decl":{"start":{"line":8,"column":4},"end":{"line":8,"column":16}},"loc":{"start":{"line":8,"column":71},"end":{"line":18,"column":5}}}},"branchMap":{"0":{"loc":{"start":{"line":8,"column":51},"end":{"line":8,"column":71}},"type":"default-arg","locations":[{"start":{"line":8,"column":67},"end":{"line":8,"column":71}}]}},"s":{"0":2,"1":5,"2":5,"3":5,"4":5,"5":5,"6":5,"7":2},"f":{"0":5},"b":{"0":[1]}},"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\NavigationException.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\NavigationException.ts","statementMap":{"0":{"start":{"line":1,"column":0},"end":{"line":1,"column":48}},"1":{"start":{"line":5,"column":29},"end":{"line":5,"column":107}},"2":{"start":{"line":7,"column":8},"end":{"line":11,"column":10}},"3":{"start":{"line":3,"column":0},"end":{"line":3,"column":13}}},"fnMap":{"0":{"name":"(anonymous_0)","decl":{"start":{"line":4,"column":4},"end":{"line":4,"column":16}},"loc":{"start":{"line":4,"column":65},"end":{"line":12,"column":5}}}},"branchMap":{"0":{"loc":{"start":{"line":5,"column":29},"end":{"line":5,"column":107}},"type":"cond-expr","locations":[{"start":{"line":5,"column":62},"end":{"line":5,"column":83}},{"start":{"line":5,"column":86},"end":{"line":5,"column":107}}]}},"s":{"0":2,"1":3,"2":3,"3":2},"f":{"0":3},"b":{"0":[2,1]}},"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\browser\\launcher.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\browser\\launcher.ts","statementMap":{"0":{"start":{"line":18,"column":0},"end":{"line":18,"column":7}},"1":{"start":{"line":65,"column":0},"end":{"line":65,"column":7}},"2":{"start":{"line":1,"column":0},"end":{"line":1,"column":47}},"3":{"start":{"line":2,"column":0},"end":{"line":2,"column":20}},"4":{"start":{"line":3,"column":0},"end":{"line":3,"column":44}},"5":{"start":{"line":4,"column":0},"end":{"line":4,"column":31}},"6":{"start":{"line":5,"column":0},"end":{"line":5,"column":60}},"7":{"start":{"line":8,"column":4},"end":{"line":12,"column":5}},"8":{"start":{"line":9,"column":8},"end":{"line":11,"column":9}},"9":{"start":{"line":10,"column":12},"end":{"line":10,"column":30}},"10":{"start":{"line":13,"column":4},"end":{"line":13,"column":16}},"11":{"start":{"line":16,"column":36},"end":{"line":16,"column":40}},"12":{"start":{"line":19,"column":4},"end":{"line":22,"column":5}},"13":{"start":{"line":20,"column":8},"end":{"line":20,"column":51}},"14":{"start":{"line":21,"column":8},"end":{"line":21,"column":15}},"15":{"start":{"line":24,"column":4},"end":{"line":24,"column":44}},"16":{"start":{"line":26,"column":23},"end":{"line":26,"column":40}},"17":{"start":{"line":27,"column":31},"end":{"line":31,"column":6}},"18":{"start":{"line":33,"column":4},"end":{"line":38,"column":5}},"19":{"start":{"line":34,"column":8},"end":{"line":34,"column":67}},"20":{"start":{"line":35,"column":8},"end":{"line":35,"column":50}},"21":{"start":{"line":37,"column":8},"end":{"line":37,"column":117}},"22":{"start":{"line":40,"column":4},"end":{"line":40,"column":40}},"23":{"start":{"line":41,"column":4},"end":{"line":41,"column":58}},"24":{"start":{"line":43,"column":4},"end":{"line":46,"column":7}},"25":{"start":{"line":44,"column":8},"end":{"line":44,"column":55}},"26":{"start":{"line":45,"column":8},"end":{"line":45,"column":29}},"27":{"start":{"line":48,"column":4},"end":{"line":62,"column":5}},"28":{"start":{"line":49,"column":24},"end":{"line":49,"column":37}},"29":{"start":{"line":50,"column":22},"end":{"line":50,"column":43}},"30":{"start":{"line":51,"column":19},"end":{"line":51,"column":27}},"31":{"start":{"line":52,"column":8},"end":{"line":54,"column":9}},"32":{"start":{"line":53,"column":12},"end":{"line":53,"column":43}},"33":{"start":{"line":56,"column":8},"end":{"line":59,"column":11}},"34":{"start":{"line":61,"column":8},"end":{"line":61,"column":56}},"35":{"start":{"line":66,"column":4},"end":{"line":78,"column":5}},"36":{"start":{"line":67,"column":8},"end":{"line":67,"column":65}},"37":{"start":{"line":68,"column":8},"end":{"line":75,"column":9}},"38":{"start":{"line":69,"column":12},"end":{"line":69,"column":40}},"39":{"start":{"line":71,"column":12},"end":{"line":71,"column":90}},"40":{"start":{"line":72,"column":12},"end":{"line":72,"column":28}},"41":{"start":{"line":74,"column":12},"end":{"line":74,"column":33}},"42":{"start":{"line":77,"column":8},"end":{"line":77,"column":52}}},"fnMap":{"0":{"name":"findLocalChrome","decl":{"start":{"line":7,"column":9},"end":{"line":7,"column":24}},"loc":{"start":{"line":7,"column":24},"end":{"line":14,"column":1}}},"1":{"name":"launchAndNavigate","decl":{"start":{"line":18,"column":22},"end":{"line":18,"column":39}},"loc":{"start":{"line":18,"column":57},"end":{"line":63,"column":1}}},"2":{"name":"(anonymous_3)","decl":{"start":{"line":43,"column":37},"end":{"line":43,"column":40}},"loc":{"start":{"line":43,"column":42},"end":{"line":46,"column":5}}},"3":{"name":"cancelAutomation","decl":{"start":{"line":65,"column":22},"end":{"line":65,"column":38}},"loc":{"start":{"line":65,"column":38},"end":{"line":79,"column":1}}}},"branchMap":{"0":{"loc":{"start":{"line":9,"column":8},"end":{"line":11,"column":9}},"type":"if","locations":[{"start":{"line":9,"column":8},"end":{"line":11,"column":9}},{"start":{},"end":{}}]},"1":{"loc":{"start":{"line":9,"column":12},"end":{"line":9,"column":51}},"type":"binary-expr","locations":[{"start":{"line":9,"column":12},"end":{"line":9,"column":22}},{"start":{"line":9,"column":26},"end":{"line":9,"column":51}}]},"2":{"loc":{"start":{"line":19,"column":4},"end":{"line":22,"column":5}},"type":"if","locations":[{"start":{"line":19,"column":4},"end":{"line":22,"column":5}},{"start":{},"end":{}}]},"3":{"loc":{"start":{"line":33,"column":4},"end":{"line":38,"column":5}},"type":"if","locations":[{"start":{"line":33,"column":4},"end":{"line":38,"column":5}},{"start":{"line":36,"column":11},"end":{"line":38,"column":5}}]},"4":{"loc":{"start":{"line":52,"column":8},"end":{"line":54,"column":9}},"type":"if","locations":[{"start":{"line":52,"column":8},"end":{"line":54,"column":9}},{"start":{},"end":{}}]},"5":{"loc":{"start":{"line":66,"column":4},"end":{"line":78,"column":5}},"type":"if","locations":[{"start":{"line":66,"column":4},"end":{"line":78,"column":5}},{"start":{"line":76,"column":11},"end":{"line":78,"column":5}}]}},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":7,"8":17,"9":2,"10":5,"11":1,"12":8,"13":1,"14":1,"15":7,"16":7,"17":7,"18":7,"19":2,"20":2,"21":5,"22":7,"23":7,"24":7,"25":1,"26":1,"27":7,"28":7,"29":7,"30":7,"31":7,"32":1,"33":7,"34":1,"35":13,"36":6,"37":6,"38":6,"39":1,"40":1,"41":6,"42":7},"f":{"0":7,"1":8,"2":1,"3":13},"b":{"0":[2,15],"1":[17,17],"2":[1,7],"3":[2,5],"4":[1,6],"5":[6,7]}},"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\logger.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\logger.ts","statementMap":{"0":{"start":{"line":1,"column":0},"end":{"line":1,"column":30}},"1":{"start":{"line":3,"column":23},"end":{"line":13,"column":2}},"2":{"start":{"line":4,"column":4},"end":{"line":11,"column":5}},"3":{"start":{"line":6,"column":8},"end":{"line":10,"column":11}},"4":{"start":{"line":12,"column":4},"end":{"line":12,"column":16}},"5":{"start":{"line":15,"column":15},"end":{"line":63,"column":2}},"6":{"start":{"line":31,"column":20},"end":{"line":31,"column":94}},"7":{"start":{"line":40,"column":34},"end":{"line":44,"column":56}},"8":{"start":{"line":46,"column":20},"end":{"line":58,"column":2}},"9":{"start":{"line":65,"column":0},"end":{"line":65,"column":22}}},"fnMap":{"0":{"name":"(anonymous_1)","decl":{"start":{"line":3,"column":38},"end":{"line":3,"column":39}},"loc":{"start":{"line":3,"column":47},"end":{"line":13,"column":1}}},"1":{"name":"(anonymous_2)","decl":{"start":{"line":30,"column":38},"end":{"line":30,"column":39}},"loc":{"start":{"line":30,"column":47},"end":{"line":32,"column":17}}},"2":{"name":"(anonymous_3)","decl":{"start":{"line":39,"column":38},"end":{"line":39,"column":39}},"loc":{"start":{"line":39,"column":47},"end":{"line":59,"column":17}}}},"branchMap":{"0":{"loc":{"start":{"line":4,"column":4},"end":{"line":11,"column":5}},"type":"if","locations":[{"start":{"line":4,"column":4},"end":{"line":11,"column":5}},{"start":{},"end":{}}]},"1":{"loc":{"start":{"line":40,"column":34},"end":{"line":44,"column":56}},"type":"cond-expr","locations":[{"start":{"line":41,"column":26},"end":{"line":43,"column":40}},{"start":{"line":44,"column":26},"end":{"line":44,"column":56}}]},"2":{"loc":{"start":{"line":41,"column":26},"end":{"line":43,"column":40}},"type":"cond-expr","locations":[{"start":{"line":42,"column":30},"end":{"line":42,"column":51}},{"start":{"line":43,"column":30},"end":{"line":43,"column":40}}]},"3":{"loc":{"start":{"line":50,"column":16},"end":{"line":50,"column":32}},"type":"binary-expr","locations":[{"start":{"line":50,"column":16},"end":{"line":50,"column":23}},{"start":{"line":50,"column":27},"end":{"line":50,"column":32}}]},"4":{"loc":{"start":{"line":51,"column":16},"end":{"line":51,"column":36}},"type":"binary-expr","locations":[{"start":{"line":51,"column":16},"end":{"line":51,"column":25}},{"start":{"line":51,"column":29},"end":{"line":51,"column":36}}]},"5":{"loc":{"start":{"line":53,"column":16},"end":{"line":53,"column":81}},"type":"cond-expr","locations":[{"start":{"line":53,"column":51},"end":{"line":53,"column":69}},{"start":{"line":53,"column":72},"end":{"line":53,"column":81}}]}},"s":{"0":2,"1":2,"2":44,"3":2,"4":44,"5":2,"6":44,"7":3,"8":3,"9":2},"f":{"0":44,"1":44,"2":3},"b":{"0":[2,42],"1":[2,1],"2":[0,2],"3":[3,3],"4":[3,1],"5":[0,3]}},"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\server.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\server.ts","statementMap":{"0":{"start":{"line":15,"column":0},"end":{"line":15,"column":16}},"1":{"start":{"line":1,"column":0},"end":{"line":1,"column":30}},"2":{"start":{"line":2,"column":0},"end":{"line":2,"column":24}},"3":{"start":{"line":3,"column":0},"end":{"line":3,"column":30}},"4":{"start":{"line":4,"column":0},"end":{"line":4,"column":37}},"5":{"start":{"line":6,"column":13},"end":{"line":6,"column":29}},"6":{"start":{"line":9,"column":0},"end":{"line":9,"column":59}},"7":{"start":{"line":10,"column":0},"end":{"line":10,"column":24}},"8":{"start":{"line":13,"column":0},"end":{"line":13,"column":27}},"9":{"start":{"line":16,"column":4},"end":{"line":18,"column":7}},"10":{"start":{"line":17,"column":8},"end":{"line":17,"column":90}}},"fnMap":{"0":{"name":"startServer","decl":{"start":{"line":15,"column":16},"end":{"line":15,"column":27}},"loc":{"start":{"line":15,"column":39},"end":{"line":19,"column":1}}},"1":{"name":"(anonymous_2)","decl":{"start":{"line":16,"column":21},"end":{"line":16,"column":24}},"loc":{"start":{"line":16,"column":26},"end":{"line":18,"column":5}}}},"branchMap":{"0":{"loc":{"start":{"line":15,"column":28},"end":{"line":15,"column":39}},"type":"default-arg","locations":[{"start":{"line":15,"column":35},"end":{"line":15,"column":39}}]}},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1,"9":0,"10":0},"f":{"0":0,"1":0},"b":{"0":[0]}},"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\gui\\routes.ts":{"path":"C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\gui\\routes.ts","statementMap":{"0":{"start":{"line":1,"column":0},"end":{"line":1,"column":33}},"1":{"start":{"line":2,"column":0},"end":{"line":2,"column":65}},"2":{"start":{"line":3,"column":0},"end":{"line":3,"column":42}},"3":{"start":{"line":4,"column":0},"end":{"line":4,"column":31}},"4":{"start":{"line":6,"column":15},"end":{"line":6,"column":23}},"5":{"start":{"line":8,"column":0},"end":{"line":20,"column":3}},"6":{"start":{"line":9,"column":4},"end":{"line":9,"column":66}},"7":{"start":{"line":10,"column":4},"end":{"line":19,"column":5}},"8":{"start":{"line":12,"column":8},"end":{"line":12,"column":71}},"9":{"start":{"line":15,"column":8},"end":{"line":15,"column":44}},"10":{"start":{"line":16,"column":8},"end":{"line":16,"column":58}},"11":{"start":{"line":18,"column":8},"end":{"line":18,"column":28}},"12":{"start":{"line":22,"column":0},"end":{"line":31,"column":3}},"13":{"start":{"line":23,"column":4},"end":{"line":23,"column":67}},"14":{"start":{"line":24,"column":4},"end":{"line":30,"column":5}},"15":{"start":{"line":25,"column":8},"end":{"line":25,"column":33}},"16":{"start":{"line":26,"column":8},"end":{"line":26,"column":70}},"17":{"start":{"line":28,"column":8},"end":{"line":28,"column":28}},"18":{"start":{"line":29,"column":8},"end":{"line":29,"column":79}},"19":{"start":{"line":33,"column":0},"end":{"line":33,"column":22}}},"fnMap":{"0":{"name":"(anonymous_1)","decl":{"start":{"line":8,"column":33},"end":{"line":8,"column":38}},"loc":{"start":{"line":8,"column":52},"end":{"line":20,"column":1}}},"1":{"name":"(anonymous_2)","decl":{"start":{"line":22,"column":34},"end":{"line":22,"column":39}},"loc":{"start":{"line":22,"column":53},"end":{"line":31,"column":1}}}},"branchMap":{},"s":{"0":1,"1":1,"2":1,"3":1,"4":1,"5":1,"6":2,"7":2,"8":2,"9":2,"10":1,"11":1,"12":1,"13":2,"14":2,"15":2,"16":1,"17":1,"18":1,"19":1},"f":{"0":2,"1":2},"b":{}}}}
+{
+    "numFailedTestSuites": 2,
+    "numFailedTests": 0,
+    "numPassedTestSuites": 4,
+    "numPassedTests": 16,
+    "numPendingTestSuites": 0,
+    "numPendingTests": 0,
+    "numRuntimeErrorTestSuites": 2,
+    "numTodoTests": 0,
+    "numTotalTestSuites": 6,
+    "numTotalTests": 16,
+    "openHandles": [],
+    "snapshot": {
+        "added": 0,
+        "didUpdate": false,
+        "failure": false,
+        "filesAdded": 0,
+        "filesRemoved": 0,
+        "filesRemovedList": [],
+        "filesUnmatched": 0,
+        "filesUpdated": 0,
+        "matched": 0,
+        "total": 0,
+        "unchecked": 0,
+        "uncheckedKeysByFile": [],
+        "unmatched": 0,
+        "updated": 0
+    },
+    "startTime": 1781866197441,
+    "success": false,
+    "testResults": [
+        {
+            "assertionResults": [],
+            "coverage": {},
+            "endTime": 1781866203735,
+            "message": "  ● Test suite failed to run\n\n    \u001b[96mtest/src/logger.test.ts\u001b[0m:\u001b[93m1\u001b[0m:\u001b[93m10\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2614: \u001b[0mModule '\"../../src/logger\"' has no exported member 'logger'. Did you mean to use 'import logger from \"../../src/logger\"' instead?\n\n    \u001b[7m1\u001b[0m import { logger } from '../../src/logger';\n    \u001b[7m \u001b[0m \u001b[91m         ~~~~~~\u001b[0m\n",
+            "name": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\logger.test.ts",
+            "startTime": 1781866203735,
+            "status": "failed",
+            "summary": ""
+        },
+        {
+            "assertionResults": [],
+            "coverage": {},
+            "endTime": 1781866203735,
+            "message": "  ● Test suite failed to run\n\n    \u001b[96mtest/src/server.test.ts\u001b[0m:\u001b[93m2\u001b[0m:\u001b[93m15\u001b[0m - \u001b[91merror\u001b[0m\u001b[90m TS2305: \u001b[0mModule '\"../../src/server\"' has no exported member 'server'.\n\n    \u001b[7m2\u001b[0m import { app, server } from '../../src/server';\n    \u001b[7m \u001b[0m \u001b[91m              ~~~~~~\u001b[0m\n",
+            "name": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\server.test.ts",
+            "startTime": 1781866203735,
+            "status": "failed",
+            "summary": ""
+        },
+        {
+            "assertionResults": [
+                {
+                    "ancestorTitles": ["Web Scraper"],
+                    "duration": 8,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Web Scraper should extract correct elements matching a keyword",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 6,
+                    "retryReasons": [],
+                    "startAt": 1781866202714,
+                    "status": "passed",
+                    "title": "should extract correct elements matching a keyword"
+                }
+            ],
+            "endTime": 1781866202724,
+            "message": "",
+            "name": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\web_scraper\\scraper.test.ts",
+            "startTime": 1781866198309,
+            "status": "passed",
+            "summary": ""
+        },
+        {
+            "assertionResults": [
+                {
+                    "ancestorTitles": ["Exceptions"],
+                    "duration": 6,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Exceptions BaseException generates a valid UUID and sets properties correctly",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 4,
+                    "retryReasons": [],
+                    "startAt": 1781866202729,
+                    "status": "passed",
+                    "title": "BaseException generates a valid UUID and sets properties correctly"
+                },
+                {
+                    "ancestorTitles": ["Exceptions"],
+                    "duration": 1,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Exceptions BaseException defaults to true operational",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866202735,
+                    "status": "passed",
+                    "title": "BaseException defaults to true operational"
+                },
+                {
+                    "ancestorTitles": ["Exceptions"],
+                    "duration": 1,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Exceptions NavigationException defaults to true operational and custom message",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 3,
+                    "retryReasons": [],
+                    "startAt": 1781866202736,
+                    "status": "passed",
+                    "title": "NavigationException defaults to true operational and custom message"
+                },
+                {
+                    "ancestorTitles": ["Exceptions"],
+                    "duration": 0,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Exceptions NavigationException handles string error properly",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866202737,
+                    "status": "passed",
+                    "title": "NavigationException handles string error properly"
+                }
+            ],
+            "endTime": 1781866202739,
+            "message": "",
+            "name": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\classes\\exceptions\\index.test.ts",
+            "startTime": 1781866198327,
+            "status": "passed",
+            "summary": ""
+        },
+        {
+            "assertionResults": [
+                {
+                    "ancestorTitles": ["Browser Launcher"],
+                    "duration": 14,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Browser Launcher launchAndNavigate finds local chrome and launches successfully",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 2,
+                    "retryReasons": [],
+                    "startAt": 1781866202976,
+                    "status": "passed",
+                    "title": "launchAndNavigate finds local chrome and launches successfully"
+                },
+                {
+                    "ancestorTitles": ["Browser Launcher"],
+                    "duration": 3,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Browser Launcher launchAndNavigate uses bundled browser if local chrome is not found",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866202990,
+                    "status": "passed",
+                    "title": "launchAndNavigate uses bundled browser if local chrome is not found"
+                },
+                {
+                    "ancestorTitles": ["Browser Launcher"],
+                    "duration": 3,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Browser Launcher launchAndNavigate does not launch a new browser if one is already active",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866202994,
+                    "status": "passed",
+                    "title": "launchAndNavigate does not launch a new browser if one is already active"
+                },
+                {
+                    "ancestorTitles": ["Browser Launcher"],
+                    "duration": 3,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Browser Launcher launchAndNavigate creates a new page if no pages exist",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866202997,
+                    "status": "passed",
+                    "title": "launchAndNavigate creates a new page if no pages exist"
+                },
+                {
+                    "ancestorTitles": ["Browser Launcher"],
+                    "duration": 10,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Browser Launcher launchAndNavigate throws NavigationException when navigation fails",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866203000,
+                    "status": "passed",
+                    "title": "launchAndNavigate throws NavigationException when navigation fails"
+                },
+                {
+                    "ancestorTitles": ["Browser Launcher"],
+                    "duration": 5,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Browser Launcher cancelAutomation handles close exceptions and exits process",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866203010,
+                    "status": "passed",
+                    "title": "cancelAutomation handles close exceptions and exits process"
+                },
+                {
+                    "ancestorTitles": ["Browser Launcher"],
+                    "duration": 4,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "Browser Launcher handles browser disconnect event",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866203015,
+                    "status": "passed",
+                    "title": "handles browser disconnect event"
+                }
+            ],
+            "endTime": 1781866203020,
+            "message": "",
+            "name": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\browser\\launcher.test.ts",
+            "startTime": 1781866198321,
+            "status": "passed",
+            "summary": ""
+        },
+        {
+            "assertionResults": [
+                {
+                    "ancestorTitles": ["GUI API Routes"],
+                    "duration": 43,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "GUI API Routes POST /api/start-automation should call launchAndNavigate",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 3,
+                    "retryReasons": [],
+                    "startAt": 1781866203262,
+                    "status": "passed",
+                    "title": "POST /api/start-automation should call launchAndNavigate"
+                },
+                {
+                    "ancestorTitles": ["GUI API Routes"],
+                    "duration": 12,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "GUI API Routes POST /api/start-automation should handle errors",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 1,
+                    "retryReasons": [],
+                    "startAt": 1781866203305,
+                    "status": "passed",
+                    "title": "POST /api/start-automation should handle errors"
+                },
+                {
+                    "ancestorTitles": ["GUI API Routes"],
+                    "duration": 6,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "GUI API Routes POST /api/cancel-automation should call cancelAutomation",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 3,
+                    "retryReasons": [],
+                    "startAt": 1781866203317,
+                    "status": "passed",
+                    "title": "POST /api/cancel-automation should call cancelAutomation"
+                },
+                {
+                    "ancestorTitles": ["GUI API Routes"],
+                    "duration": 6,
+                    "failing": false,
+                    "failureDetails": [],
+                    "failureMessages": [],
+                    "fullName": "GUI API Routes POST /api/cancel-automation should handle errors",
+                    "invocations": 1,
+                    "location": null,
+                    "numPassingAsserts": 2,
+                    "retryReasons": [],
+                    "startAt": 1781866203323,
+                    "status": "passed",
+                    "title": "POST /api/cancel-automation should handle errors"
+                }
+            ],
+            "endTime": 1781866203330,
+            "message": "",
+            "name": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\test\\src\\gui\\routes.test.ts",
+            "startTime": 1781866198327,
+            "status": "passed",
+            "summary": ""
+        }
+    ],
+    "wasInterrupted": false,
+    "coverageMap": {
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\web_scraper\\scraper.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\web_scraper\\scraper.ts",
+            "statementMap": {
+                "0": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 7 } },
+                "1": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 34 } },
+                "2": { "start": { "line": 4, "column": 20 }, "end": { "line": 4, "column": 62 } },
+                "3": { "start": { "line": 5, "column": 17 }, "end": { "line": 5, "column": 40 } },
+                "4": { "start": { "line": 6, "column": 4 }, "end": { "line": 6, "column": 56 } },
+                "5": { "start": { "line": 8, "column": 21 }, "end": { "line": 24, "column": 15 } },
+                "6": { "start": { "line": 9, "column": 31 }, "end": { "line": 9, "column": 33 } },
+                "7": { "start": { "line": 10, "column": 8 }, "end": { "line": 22, "column": 11 } },
+                "8": { "start": { "line": 11, "column": 26 }, "end": { "line": 11, "column": 35 } },
+                "9": { "start": { "line": 12, "column": 25 }, "end": { "line": 12, "column": 111 } },
+                "10": { "start": { "line": 13, "column": 12 }, "end": { "line": 21, "column": 13 } },
+                "11": { "start": { "line": 14, "column": 16 }, "end": { "line": 20, "column": 19 } },
+                "12": { "start": { "line": 23, "column": 8 }, "end": { "line": 23, "column": 23 } },
+                "13": { "start": { "line": 27, "column": 26 }, "end": { "line": 27, "column": 28 } },
+                "14": { "start": { "line": 28, "column": 17 }, "end": { "line": 28, "column": 26 } },
+                "15": { "start": { "line": 29, "column": 4 }, "end": { "line": 36, "column": 5 } },
+                "16": { "start": { "line": 30, "column": 8 }, "end": { "line": 30, "column": 55 } },
+                "17": { "start": { "line": 30, "column": 46 }, "end": { "line": 30, "column": 55 } },
+                "18": { "start": { "line": 31, "column": 20 }, "end": { "line": 31, "column": 42 } },
+                "19": { "start": { "line": 32, "column": 8 }, "end": { "line": 35, "column": 9 } },
+                "20": { "start": { "line": 33, "column": 12 }, "end": { "line": 33, "column": 26 } },
+                "21": { "start": { "line": 34, "column": 12 }, "end": { "line": 34, "column": 28 } },
+                "22": { "start": { "line": 38, "column": 4 }, "end": { "line": 38, "column": 26 } },
+                "23": { "start": { "line": 39, "column": 4 }, "end": { "line": 39, "column": 18 } },
+                "24": { "start": { "line": 42, "column": 0 }, "end": { "line": 52, "column": 1 } },
+                "25": { "start": { "line": 43, "column": 16 }, "end": { "line": 43, "column": 63 } },
+                "26": { "start": { "line": 44, "column": 20 }, "end": { "line": 44, "column": 41 } },
+                "27": { "start": { "line": 46, "column": 4 }, "end": { "line": 46, "column": 64 } },
+                "28": { "start": { "line": 47, "column": 4 }, "end": { "line": 51, "column": 44 } },
+                "29": { "start": { "line": 49, "column": 12 }, "end": { "line": 49, "column": 57 } },
+                "30": { "start": { "line": 51, "column": 24 }, "end": { "line": 51, "column": 42 } }
+            },
+            "fnMap": {
+                "0": {
+                    "name": "scrape",
+                    "decl": { "start": { "line": 3, "column": 22 }, "end": { "line": 3, "column": 28 } },
+                    "loc": { "start": { "line": 3, "column": 57 }, "end": { "line": 40, "column": 1 } }
+                },
+                "1": {
+                    "name": "(anonymous_2)",
+                    "decl": { "start": { "line": 8, "column": 41 }, "end": { "line": 8, "column": 42 } },
+                    "loc": { "start": { "line": 8, "column": 53 }, "end": { "line": 24, "column": 5 } }
+                },
+                "2": {
+                    "name": "(anonymous_3)",
+                    "decl": { "start": { "line": 10, "column": 73 }, "end": { "line": 10, "column": 74 } },
+                    "loc": { "start": { "line": 10, "column": 80 }, "end": { "line": 22, "column": 9 } }
+                },
+                "3": {
+                    "name": "(anonymous_4)",
+                    "decl": { "start": { "line": 48, "column": 14 }, "end": { "line": 48, "column": 15 } },
+                    "loc": { "start": { "line": 48, "column": 25 }, "end": { "line": 50, "column": 9 } }
+                },
+                "4": {
+                    "name": "(anonymous_5)",
+                    "decl": { "start": { "line": 51, "column": 15 }, "end": { "line": 51, "column": 16 } },
+                    "loc": { "start": { "line": 51, "column": 24 }, "end": { "line": 51, "column": 42 } }
+                }
+            },
+            "branchMap": {
+                "0": {
+                    "loc": { "start": { "line": 12, "column": 26 }, "end": { "line": 12, "column": 83 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 12, "column": 26 }, "end": { "line": 12, "column": 41 } },
+                        { "start": { "line": 12, "column": 45 }, "end": { "line": 12, "column": 62 } },
+                        { "start": { "line": 12, "column": 66 }, "end": { "line": 12, "column": 77 } },
+                        { "start": { "line": 12, "column": 81 }, "end": { "line": 12, "column": 83 } }
+                    ]
+                },
+                "1": {
+                    "loc": { "start": { "line": 13, "column": 12 }, "end": { "line": 21, "column": 13 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 13, "column": 12 }, "end": { "line": 21, "column": 13 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "2": {
+                    "loc": { "start": { "line": 13, "column": 16 }, "end": { "line": 13, "column": 88 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 13, "column": 16 }, "end": { "line": 13, "column": 20 } },
+                        { "start": { "line": 13, "column": 25 }, "end": { "line": 13, "column": 33 } },
+                        { "start": { "line": 13, "column": 37 }, "end": { "line": 13, "column": 87 } }
+                    ]
+                },
+                "3": {
+                    "loc": { "start": { "line": 18, "column": 24 }, "end": { "line": 18, "column": 37 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 18, "column": 24 }, "end": { "line": 18, "column": 29 } },
+                        { "start": { "line": 18, "column": 33 }, "end": { "line": 18, "column": 37 } }
+                    ]
+                },
+                "4": {
+                    "loc": { "start": { "line": 19, "column": 26 }, "end": { "line": 19, "column": 44 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 19, "column": 26 }, "end": { "line": 19, "column": 36 } },
+                        { "start": { "line": 19, "column": 40 }, "end": { "line": 19, "column": 44 } }
+                    ]
+                },
+                "5": {
+                    "loc": { "start": { "line": 30, "column": 8 }, "end": { "line": 30, "column": 55 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 30, "column": 8 }, "end": { "line": 30, "column": 55 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "6": {
+                    "loc": { "start": { "line": 30, "column": 12 }, "end": { "line": 30, "column": 44 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 30, "column": 12 }, "end": { "line": 30, "column": 20 } },
+                        { "start": { "line": 30, "column": 24 }, "end": { "line": 30, "column": 44 } }
+                    ]
+                },
+                "7": {
+                    "loc": { "start": { "line": 32, "column": 8 }, "end": { "line": 35, "column": 9 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 32, "column": 8 }, "end": { "line": 35, "column": 9 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "8": {
+                    "loc": { "start": { "line": 42, "column": 0 }, "end": { "line": 52, "column": 1 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 42, "column": 0 }, "end": { "line": 52, "column": 1 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "9": {
+                    "loc": { "start": { "line": 43, "column": 16 }, "end": { "line": 43, "column": 63 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 43, "column": 16 }, "end": { "line": 43, "column": 31 } },
+                        { "start": { "line": 43, "column": 35 }, "end": { "line": 43, "column": 63 } }
+                    ]
+                },
+                "10": {
+                    "loc": { "start": { "line": 44, "column": 20 }, "end": { "line": 44, "column": 41 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 44, "column": 20 }, "end": { "line": 44, "column": 35 } },
+                        { "start": { "line": 44, "column": 39 }, "end": { "line": 44, "column": 41 } }
+                    ]
+                }
+            },
+            "s": {
+                "0": 1,
+                "1": 1,
+                "2": 1,
+                "3": 1,
+                "4": 1,
+                "5": 1,
+                "6": 0,
+                "7": 0,
+                "8": 0,
+                "9": 0,
+                "10": 0,
+                "11": 0,
+                "12": 0,
+                "13": 1,
+                "14": 1,
+                "15": 1,
+                "16": 2,
+                "17": 0,
+                "18": 2,
+                "19": 2,
+                "20": 1,
+                "21": 1,
+                "22": 1,
+                "23": 1,
+                "24": 1,
+                "25": 0,
+                "26": 0,
+                "27": 0,
+                "28": 0,
+                "29": 0,
+                "30": 0
+            },
+            "f": { "0": 1, "1": 0, "2": 0, "3": 0, "4": 0 },
+            "b": {
+                "0": [0, 0, 0, 0],
+                "1": [0, 0],
+                "2": [0, 0, 0],
+                "3": [0, 0],
+                "4": [0, 0],
+                "5": [0, 2],
+                "6": [2, 2],
+                "7": [1, 1],
+                "8": [0, 1],
+                "9": [0, 0],
+                "10": [0, 0]
+            }
+        },
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\index.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\index.ts",
+            "statementMap": {
+                "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 32 } },
+                "1": { "start": { "line": 2, "column": 0 }, "end": { "line": 2, "column": 38 } }
+            },
+            "fnMap": {},
+            "branchMap": {},
+            "s": { "0": 2, "1": 2 },
+            "f": {},
+            "b": {}
+        },
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\BaseException.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\BaseException.ts",
+            "statementMap": {
+                "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 28 } },
+                "1": { "start": { "line": 9, "column": 8 }, "end": { "line": 9, "column": 27 } },
+                "2": { "start": { "line": 11, "column": 8 }, "end": { "line": 11, "column": 58 } },
+                "3": { "start": { "line": 13, "column": 8 }, "end": { "line": 13, "column": 38 } },
+                "4": { "start": { "line": 14, "column": 8 }, "end": { "line": 14, "column": 25 } },
+                "5": { "start": { "line": 15, "column": 8 }, "end": { "line": 15, "column": 43 } },
+                "6": { "start": { "line": 17, "column": 8 }, "end": { "line": 17, "column": 56 } },
+                "7": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 13 } }
+            },
+            "fnMap": {
+                "0": {
+                    "name": "(anonymous_1)",
+                    "decl": { "start": { "line": 8, "column": 4 }, "end": { "line": 8, "column": 16 } },
+                    "loc": { "start": { "line": 8, "column": 71 }, "end": { "line": 18, "column": 5 } }
+                }
+            },
+            "branchMap": {
+                "0": {
+                    "loc": { "start": { "line": 8, "column": 51 }, "end": { "line": 8, "column": 71 } },
+                    "type": "default-arg",
+                    "locations": [{ "start": { "line": 8, "column": 67 }, "end": { "line": 8, "column": 71 } }]
+                }
+            },
+            "s": { "0": 2, "1": 5, "2": 5, "3": 5, "4": 5, "5": 5, "6": 5, "7": 2 },
+            "f": { "0": 5 },
+            "b": { "0": [1] }
+        },
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\NavigationException.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\classes\\exceptions\\NavigationException.ts",
+            "statementMap": {
+                "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 48 } },
+                "1": { "start": { "line": 5, "column": 29 }, "end": { "line": 5, "column": 107 } },
+                "2": { "start": { "line": 7, "column": 8 }, "end": { "line": 11, "column": 10 } },
+                "3": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 13 } }
+            },
+            "fnMap": {
+                "0": {
+                    "name": "(anonymous_0)",
+                    "decl": { "start": { "line": 4, "column": 4 }, "end": { "line": 4, "column": 16 } },
+                    "loc": { "start": { "line": 4, "column": 65 }, "end": { "line": 12, "column": 5 } }
+                }
+            },
+            "branchMap": {
+                "0": {
+                    "loc": { "start": { "line": 5, "column": 29 }, "end": { "line": 5, "column": 107 } },
+                    "type": "cond-expr",
+                    "locations": [
+                        { "start": { "line": 5, "column": 62 }, "end": { "line": 5, "column": 83 } },
+                        { "start": { "line": 5, "column": 86 }, "end": { "line": 5, "column": 107 } }
+                    ]
+                }
+            },
+            "s": { "0": 2, "1": 3, "2": 3, "3": 2 },
+            "f": { "0": 3 },
+            "b": { "0": [2, 1] }
+        },
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\browser\\launcher.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\browser\\launcher.ts",
+            "statementMap": {
+                "0": { "start": { "line": 18, "column": 0 }, "end": { "line": 18, "column": 7 } },
+                "1": { "start": { "line": 65, "column": 0 }, "end": { "line": 65, "column": 7 } },
+                "2": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 47 } },
+                "3": { "start": { "line": 2, "column": 0 }, "end": { "line": 2, "column": 20 } },
+                "4": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 44 } },
+                "5": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 31 } },
+                "6": { "start": { "line": 5, "column": 0 }, "end": { "line": 5, "column": 60 } },
+                "7": { "start": { "line": 8, "column": 4 }, "end": { "line": 12, "column": 5 } },
+                "8": { "start": { "line": 9, "column": 8 }, "end": { "line": 11, "column": 9 } },
+                "9": { "start": { "line": 10, "column": 12 }, "end": { "line": 10, "column": 30 } },
+                "10": { "start": { "line": 13, "column": 4 }, "end": { "line": 13, "column": 16 } },
+                "11": { "start": { "line": 16, "column": 36 }, "end": { "line": 16, "column": 40 } },
+                "12": { "start": { "line": 19, "column": 4 }, "end": { "line": 22, "column": 5 } },
+                "13": { "start": { "line": 20, "column": 8 }, "end": { "line": 20, "column": 51 } },
+                "14": { "start": { "line": 21, "column": 8 }, "end": { "line": 21, "column": 15 } },
+                "15": { "start": { "line": 24, "column": 4 }, "end": { "line": 24, "column": 44 } },
+                "16": { "start": { "line": 26, "column": 23 }, "end": { "line": 26, "column": 40 } },
+                "17": { "start": { "line": 27, "column": 31 }, "end": { "line": 31, "column": 6 } },
+                "18": { "start": { "line": 33, "column": 4 }, "end": { "line": 38, "column": 5 } },
+                "19": { "start": { "line": 34, "column": 8 }, "end": { "line": 34, "column": 67 } },
+                "20": { "start": { "line": 35, "column": 8 }, "end": { "line": 35, "column": 50 } },
+                "21": { "start": { "line": 37, "column": 8 }, "end": { "line": 37, "column": 117 } },
+                "22": { "start": { "line": 40, "column": 4 }, "end": { "line": 40, "column": 40 } },
+                "23": { "start": { "line": 41, "column": 4 }, "end": { "line": 41, "column": 58 } },
+                "24": { "start": { "line": 43, "column": 4 }, "end": { "line": 46, "column": 7 } },
+                "25": { "start": { "line": 44, "column": 8 }, "end": { "line": 44, "column": 55 } },
+                "26": { "start": { "line": 45, "column": 8 }, "end": { "line": 45, "column": 29 } },
+                "27": { "start": { "line": 48, "column": 4 }, "end": { "line": 62, "column": 5 } },
+                "28": { "start": { "line": 49, "column": 24 }, "end": { "line": 49, "column": 37 } },
+                "29": { "start": { "line": 50, "column": 22 }, "end": { "line": 50, "column": 43 } },
+                "30": { "start": { "line": 51, "column": 19 }, "end": { "line": 51, "column": 27 } },
+                "31": { "start": { "line": 52, "column": 8 }, "end": { "line": 54, "column": 9 } },
+                "32": { "start": { "line": 53, "column": 12 }, "end": { "line": 53, "column": 43 } },
+                "33": { "start": { "line": 56, "column": 8 }, "end": { "line": 59, "column": 11 } },
+                "34": { "start": { "line": 61, "column": 8 }, "end": { "line": 61, "column": 56 } },
+                "35": { "start": { "line": 66, "column": 4 }, "end": { "line": 78, "column": 5 } },
+                "36": { "start": { "line": 67, "column": 8 }, "end": { "line": 67, "column": 65 } },
+                "37": { "start": { "line": 68, "column": 8 }, "end": { "line": 75, "column": 9 } },
+                "38": { "start": { "line": 69, "column": 12 }, "end": { "line": 69, "column": 40 } },
+                "39": { "start": { "line": 71, "column": 12 }, "end": { "line": 71, "column": 90 } },
+                "40": { "start": { "line": 72, "column": 12 }, "end": { "line": 72, "column": 28 } },
+                "41": { "start": { "line": 74, "column": 12 }, "end": { "line": 74, "column": 33 } },
+                "42": { "start": { "line": 77, "column": 8 }, "end": { "line": 77, "column": 52 } }
+            },
+            "fnMap": {
+                "0": {
+                    "name": "findLocalChrome",
+                    "decl": { "start": { "line": 7, "column": 9 }, "end": { "line": 7, "column": 24 } },
+                    "loc": { "start": { "line": 7, "column": 24 }, "end": { "line": 14, "column": 1 } }
+                },
+                "1": {
+                    "name": "launchAndNavigate",
+                    "decl": { "start": { "line": 18, "column": 22 }, "end": { "line": 18, "column": 39 } },
+                    "loc": { "start": { "line": 18, "column": 57 }, "end": { "line": 63, "column": 1 } }
+                },
+                "2": {
+                    "name": "(anonymous_3)",
+                    "decl": { "start": { "line": 43, "column": 37 }, "end": { "line": 43, "column": 40 } },
+                    "loc": { "start": { "line": 43, "column": 42 }, "end": { "line": 46, "column": 5 } }
+                },
+                "3": {
+                    "name": "cancelAutomation",
+                    "decl": { "start": { "line": 65, "column": 22 }, "end": { "line": 65, "column": 38 } },
+                    "loc": { "start": { "line": 65, "column": 38 }, "end": { "line": 79, "column": 1 } }
+                }
+            },
+            "branchMap": {
+                "0": {
+                    "loc": { "start": { "line": 9, "column": 8 }, "end": { "line": 11, "column": 9 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 9, "column": 8 }, "end": { "line": 11, "column": 9 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "1": {
+                    "loc": { "start": { "line": 9, "column": 12 }, "end": { "line": 9, "column": 51 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 9, "column": 12 }, "end": { "line": 9, "column": 22 } },
+                        { "start": { "line": 9, "column": 26 }, "end": { "line": 9, "column": 51 } }
+                    ]
+                },
+                "2": {
+                    "loc": { "start": { "line": 19, "column": 4 }, "end": { "line": 22, "column": 5 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 19, "column": 4 }, "end": { "line": 22, "column": 5 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "3": {
+                    "loc": { "start": { "line": 33, "column": 4 }, "end": { "line": 38, "column": 5 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 33, "column": 4 }, "end": { "line": 38, "column": 5 } },
+                        { "start": { "line": 36, "column": 11 }, "end": { "line": 38, "column": 5 } }
+                    ]
+                },
+                "4": {
+                    "loc": { "start": { "line": 52, "column": 8 }, "end": { "line": 54, "column": 9 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 52, "column": 8 }, "end": { "line": 54, "column": 9 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "5": {
+                    "loc": { "start": { "line": 66, "column": 4 }, "end": { "line": 78, "column": 5 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 66, "column": 4 }, "end": { "line": 78, "column": 5 } },
+                        { "start": { "line": 76, "column": 11 }, "end": { "line": 78, "column": 5 } }
+                    ]
+                }
+            },
+            "s": {
+                "0": 1,
+                "1": 1,
+                "2": 1,
+                "3": 1,
+                "4": 1,
+                "5": 1,
+                "6": 1,
+                "7": 7,
+                "8": 17,
+                "9": 2,
+                "10": 5,
+                "11": 1,
+                "12": 8,
+                "13": 1,
+                "14": 1,
+                "15": 7,
+                "16": 7,
+                "17": 7,
+                "18": 7,
+                "19": 2,
+                "20": 2,
+                "21": 5,
+                "22": 7,
+                "23": 7,
+                "24": 7,
+                "25": 1,
+                "26": 1,
+                "27": 7,
+                "28": 7,
+                "29": 7,
+                "30": 7,
+                "31": 7,
+                "32": 1,
+                "33": 7,
+                "34": 1,
+                "35": 13,
+                "36": 6,
+                "37": 6,
+                "38": 6,
+                "39": 1,
+                "40": 1,
+                "41": 6,
+                "42": 7
+            },
+            "f": { "0": 7, "1": 8, "2": 1, "3": 13 },
+            "b": { "0": [2, 15], "1": [17, 17], "2": [1, 7], "3": [2, 5], "4": [1, 6], "5": [6, 7] }
+        },
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\logger.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\logger.ts",
+            "statementMap": {
+                "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 30 } },
+                "1": { "start": { "line": 3, "column": 23 }, "end": { "line": 13, "column": 2 } },
+                "2": { "start": { "line": 4, "column": 4 }, "end": { "line": 11, "column": 5 } },
+                "3": { "start": { "line": 6, "column": 8 }, "end": { "line": 10, "column": 11 } },
+                "4": { "start": { "line": 12, "column": 4 }, "end": { "line": 12, "column": 16 } },
+                "5": { "start": { "line": 15, "column": 15 }, "end": { "line": 63, "column": 2 } },
+                "6": { "start": { "line": 31, "column": 20 }, "end": { "line": 31, "column": 94 } },
+                "7": { "start": { "line": 40, "column": 34 }, "end": { "line": 44, "column": 56 } },
+                "8": { "start": { "line": 46, "column": 20 }, "end": { "line": 58, "column": 2 } },
+                "9": { "start": { "line": 65, "column": 0 }, "end": { "line": 65, "column": 22 } }
+            },
+            "fnMap": {
+                "0": {
+                    "name": "(anonymous_1)",
+                    "decl": { "start": { "line": 3, "column": 38 }, "end": { "line": 3, "column": 39 } },
+                    "loc": { "start": { "line": 3, "column": 47 }, "end": { "line": 13, "column": 1 } }
+                },
+                "1": {
+                    "name": "(anonymous_2)",
+                    "decl": { "start": { "line": 30, "column": 38 }, "end": { "line": 30, "column": 39 } },
+                    "loc": { "start": { "line": 30, "column": 47 }, "end": { "line": 32, "column": 17 } }
+                },
+                "2": {
+                    "name": "(anonymous_3)",
+                    "decl": { "start": { "line": 39, "column": 38 }, "end": { "line": 39, "column": 39 } },
+                    "loc": { "start": { "line": 39, "column": 47 }, "end": { "line": 59, "column": 17 } }
+                }
+            },
+            "branchMap": {
+                "0": {
+                    "loc": { "start": { "line": 4, "column": 4 }, "end": { "line": 11, "column": 5 } },
+                    "type": "if",
+                    "locations": [
+                        { "start": { "line": 4, "column": 4 }, "end": { "line": 11, "column": 5 } },
+                        { "start": {}, "end": {} }
+                    ]
+                },
+                "1": {
+                    "loc": { "start": { "line": 40, "column": 34 }, "end": { "line": 44, "column": 56 } },
+                    "type": "cond-expr",
+                    "locations": [
+                        { "start": { "line": 41, "column": 26 }, "end": { "line": 43, "column": 40 } },
+                        { "start": { "line": 44, "column": 26 }, "end": { "line": 44, "column": 56 } }
+                    ]
+                },
+                "2": {
+                    "loc": { "start": { "line": 41, "column": 26 }, "end": { "line": 43, "column": 40 } },
+                    "type": "cond-expr",
+                    "locations": [
+                        { "start": { "line": 42, "column": 30 }, "end": { "line": 42, "column": 51 } },
+                        { "start": { "line": 43, "column": 30 }, "end": { "line": 43, "column": 40 } }
+                    ]
+                },
+                "3": {
+                    "loc": { "start": { "line": 50, "column": 16 }, "end": { "line": 50, "column": 32 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 50, "column": 16 }, "end": { "line": 50, "column": 23 } },
+                        { "start": { "line": 50, "column": 27 }, "end": { "line": 50, "column": 32 } }
+                    ]
+                },
+                "4": {
+                    "loc": { "start": { "line": 51, "column": 16 }, "end": { "line": 51, "column": 36 } },
+                    "type": "binary-expr",
+                    "locations": [
+                        { "start": { "line": 51, "column": 16 }, "end": { "line": 51, "column": 25 } },
+                        { "start": { "line": 51, "column": 29 }, "end": { "line": 51, "column": 36 } }
+                    ]
+                },
+                "5": {
+                    "loc": { "start": { "line": 53, "column": 16 }, "end": { "line": 53, "column": 81 } },
+                    "type": "cond-expr",
+                    "locations": [
+                        { "start": { "line": 53, "column": 51 }, "end": { "line": 53, "column": 69 } },
+                        { "start": { "line": 53, "column": 72 }, "end": { "line": 53, "column": 81 } }
+                    ]
+                }
+            },
+            "s": { "0": 2, "1": 2, "2": 44, "3": 2, "4": 44, "5": 2, "6": 44, "7": 3, "8": 3, "9": 2 },
+            "f": { "0": 44, "1": 44, "2": 3 },
+            "b": { "0": [2, 42], "1": [2, 1], "2": [0, 2], "3": [3, 3], "4": [3, 1], "5": [0, 3] }
+        },
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\server.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\server.ts",
+            "statementMap": {
+                "0": { "start": { "line": 15, "column": 0 }, "end": { "line": 15, "column": 16 } },
+                "1": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 30 } },
+                "2": { "start": { "line": 2, "column": 0 }, "end": { "line": 2, "column": 24 } },
+                "3": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 30 } },
+                "4": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 37 } },
+                "5": { "start": { "line": 6, "column": 13 }, "end": { "line": 6, "column": 29 } },
+                "6": { "start": { "line": 9, "column": 0 }, "end": { "line": 9, "column": 59 } },
+                "7": { "start": { "line": 10, "column": 0 }, "end": { "line": 10, "column": 24 } },
+                "8": { "start": { "line": 13, "column": 0 }, "end": { "line": 13, "column": 27 } },
+                "9": { "start": { "line": 16, "column": 4 }, "end": { "line": 18, "column": 7 } },
+                "10": { "start": { "line": 17, "column": 8 }, "end": { "line": 17, "column": 90 } }
+            },
+            "fnMap": {
+                "0": {
+                    "name": "startServer",
+                    "decl": { "start": { "line": 15, "column": 16 }, "end": { "line": 15, "column": 27 } },
+                    "loc": { "start": { "line": 15, "column": 39 }, "end": { "line": 19, "column": 1 } }
+                },
+                "1": {
+                    "name": "(anonymous_2)",
+                    "decl": { "start": { "line": 16, "column": 21 }, "end": { "line": 16, "column": 24 } },
+                    "loc": { "start": { "line": 16, "column": 26 }, "end": { "line": 18, "column": 5 } }
+                }
+            },
+            "branchMap": {
+                "0": {
+                    "loc": { "start": { "line": 15, "column": 28 }, "end": { "line": 15, "column": 39 } },
+                    "type": "default-arg",
+                    "locations": [{ "start": { "line": 15, "column": 35 }, "end": { "line": 15, "column": 39 } }]
+                }
+            },
+            "s": { "0": 1, "1": 1, "2": 1, "3": 1, "4": 1, "5": 1, "6": 1, "7": 1, "8": 1, "9": 0, "10": 0 },
+            "f": { "0": 0, "1": 0 },
+            "b": { "0": [0] }
+        },
+        "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\gui\\routes.ts": {
+            "path": "C:\\Users\\geodo\\OneDrive\\Desktop\\Code\\Javascript\\go-trade\\src\\gui\\routes.ts",
+            "statementMap": {
+                "0": { "start": { "line": 1, "column": 0 }, "end": { "line": 1, "column": 33 } },
+                "1": { "start": { "line": 2, "column": 0 }, "end": { "line": 2, "column": 65 } },
+                "2": { "start": { "line": 3, "column": 0 }, "end": { "line": 3, "column": 42 } },
+                "3": { "start": { "line": 4, "column": 0 }, "end": { "line": 4, "column": 31 } },
+                "4": { "start": { "line": 6, "column": 15 }, "end": { "line": 6, "column": 23 } },
+                "5": { "start": { "line": 8, "column": 0 }, "end": { "line": 20, "column": 3 } },
+                "6": { "start": { "line": 9, "column": 4 }, "end": { "line": 9, "column": 66 } },
+                "7": { "start": { "line": 10, "column": 4 }, "end": { "line": 19, "column": 5 } },
+                "8": { "start": { "line": 12, "column": 8 }, "end": { "line": 12, "column": 71 } },
+                "9": { "start": { "line": 15, "column": 8 }, "end": { "line": 15, "column": 44 } },
+                "10": { "start": { "line": 16, "column": 8 }, "end": { "line": 16, "column": 58 } },
+                "11": { "start": { "line": 18, "column": 8 }, "end": { "line": 18, "column": 28 } },
+                "12": { "start": { "line": 22, "column": 0 }, "end": { "line": 31, "column": 3 } },
+                "13": { "start": { "line": 23, "column": 4 }, "end": { "line": 23, "column": 67 } },
+                "14": { "start": { "line": 24, "column": 4 }, "end": { "line": 30, "column": 5 } },
+                "15": { "start": { "line": 25, "column": 8 }, "end": { "line": 25, "column": 33 } },
+                "16": { "start": { "line": 26, "column": 8 }, "end": { "line": 26, "column": 70 } },
+                "17": { "start": { "line": 28, "column": 8 }, "end": { "line": 28, "column": 28 } },
+                "18": { "start": { "line": 29, "column": 8 }, "end": { "line": 29, "column": 79 } },
+                "19": { "start": { "line": 33, "column": 0 }, "end": { "line": 33, "column": 22 } }
+            },
+            "fnMap": {
+                "0": {
+                    "name": "(anonymous_1)",
+                    "decl": { "start": { "line": 8, "column": 33 }, "end": { "line": 8, "column": 38 } },
+                    "loc": { "start": { "line": 8, "column": 52 }, "end": { "line": 20, "column": 1 } }
+                },
+                "1": {
+                    "name": "(anonymous_2)",
+                    "decl": { "start": { "line": 22, "column": 34 }, "end": { "line": 22, "column": 39 } },
+                    "loc": { "start": { "line": 22, "column": 53 }, "end": { "line": 31, "column": 1 } }
+                }
+            },
+            "branchMap": {},
+            "s": {
+                "0": 1,
+                "1": 1,
+                "2": 1,
+                "3": 1,
+                "4": 1,
+                "5": 1,
+                "6": 2,
+                "7": 2,
+                "8": 2,
+                "9": 2,
+                "10": 1,
+                "11": 1,
+                "12": 1,
+                "13": 2,
+                "14": 2,
+                "15": 2,
+                "16": 1,
+                "17": 1,
+                "18": 1,
+                "19": 1
+            },
+            "f": { "0": 2, "1": 2 },
+            "b": {}
+        }
+    }
+}

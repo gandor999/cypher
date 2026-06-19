@@ -9,4 +9,5 @@ export const CHROME_PATHS: string[] = [
 import dotenv from 'dotenv';
 dotenv.config();
 
-export const TARGET_URL = process.env.TARGET_URL || 'https://www.heygotrade.comqwd';
+export const TARGET_URL = process.env.TARGET_URL || 'https://www.heygotrade.com';
+export const STEPS_FILE_PATH = process.env.STEPS_FILE_PATH || path.join(process.cwd(), 'steps', 'steps.json');
