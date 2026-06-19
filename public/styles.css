@@ -68,15 +68,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translateY(0);
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
-}
-
-.glass-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
 }
 
 .header {
@@ -111,6 +102,9 @@ body {
 .actions {
     width: 100%;
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .premium-btn {

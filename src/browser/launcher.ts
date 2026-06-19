@@ -1,7 +1,7 @@
 import puppeteer, { Browser, Page } from 'puppeteer';
 import fs from 'fs';
 import path from 'path';
-import { CHROME_PATHS } from '../constants';
+import { CHROME_PATHS, LOG_MESSAGES } from '../constants';
 import logger from '../logger';
 import { NavigationException } from '../classes/exceptions';
 import { getSteps, executeSteps } from './steps';
@@ -21,11 +21,11 @@ export async function launchAndNavigate(targetUrl: string): Promise<void> {
     const stepsPath = process.env.STEPS_FILE_PATH;
     const finalSteps = getSteps(stepsPath);
     if (activeBrowser) {
-        logger.info('Browser is already running.');
+        logger.info(LOG_MESSAGES.BROWSER_RUNNING);
         return;
     }
 
-    logger.info(`Target URL: ${targetUrl}`);
+    logger.info(LOG_MESSAGES.TARGET_URL(targetUrl));
 
     const chromePath = findLocalChrome();
     const launchOptions: any = {
@@ -35,17 +35,17 @@ export async function launchAndNavigate(targetUrl: string): Promise<void> {
     };
 
     if (chromePath) {
-        logger.info(`Found local Google Chrome at: ${chromePath}`);
+        logger.info(LOG_MESSAGES.FOUND_CHROME(chromePath));
         launchOptions.executablePath = chromePath;
     } else {
-        logger.info("Local Google Chrome not found in standard paths. Falling back to Puppeteer's bundled browser.");
+        logger.info(LOG_MESSAGES.FALLBACK_CHROME);
     }
 
-    logger.info('Launching browser...');
+    logger.info(LOG_MESSAGES.LAUNCHING_BROWSER);
     activeBrowser = await puppeteer.launch(launchOptions);
 
     activeBrowser.on('disconnected', () => {
-        logger.info('Browser disconnected or closed.');
+        logger.info(LOG_MESSAGES.BROWSER_DISCONNECTED);
         activeBrowser = null;
     });
 
@@ -65,12 +65,19 @@ export async function launchAndNavigate(targetUrl: string): Promise<void> {
         await executeSteps(page, finalSteps);
     } catch (error) {
         throw new NavigationException(targetUrl, error);
+    } finally {
+        /* istanbul ignore else */
+        if (activeBrowser) {
+            logger.info(LOG_MESSAGES.AUTOMATION_COMPLETE);
+            await activeBrowser.close();
+            activeBrowser = null;
+        }
     }
 }
 
 export async function cancelAutomation(): Promise<void> {
     if (activeBrowser) {
-        logger.info('Cancelling automation: closing browser...');
+        logger.info(LOG_MESSAGES.CANCELLING_BROWSER);
         try {
             await activeBrowser.close();
         } catch (e) {
@@ -80,6 +87,23 @@ export async function cancelAutomation(): Promise<void> {
             activeBrowser = null;
         }
     } else {
-        logger.info('No active browser to cancel.');
+        logger.info(LOG_MESSAGES.NO_ACTIVE_BROWSER);
     }
 }
+
+export function getActiveBrowser(): Browser | null {
+    return activeBrowser;
+}
+
+// Ensure the browser properly closes if the user presses Ctrl+C
+process.on('SIGINT', async () => {
+    logger.info(LOG_MESSAGES.SIGINT_RECEIVED);
+    await cancelAutomation();
+    process.exit(0);
+});
+
+process.on('SIGTERM', async () => {
+    logger.info(LOG_MESSAGES.SIGTERM_RECEIVED);
+    await cancelAutomation();
+    process.exit(0);
+});

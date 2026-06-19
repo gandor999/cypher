@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>GoTrade Automation Controller</title>
+        <title>Web Automation Engine</title>
         <link
             href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
             rel="stylesheet"
@@ -29,8 +29,8 @@
                             <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                         </svg>
                     </div>
-                    <h1>GoTrade Controller</h1>
-                    <p>Automated trading initialization</p>
+                    <h1>Automation Engine</h1>
+                    <p>Puppeteer-driven browser control panel</p>
                 </div>
 
                 <div class="actions">
@@ -38,9 +38,10 @@
                         <span id="btnText" class="btn-text">Start Automation</span>
                         <div class="btn-glow"></div>
                     </button>
+                    <button id="inspectBtn" class="inspect-btn" style="width: 100%; padding: 12px 24px; border-radius: 8px; border: 1px solid #4ade80; background: rgba(74, 222, 128, 0.1); color: #4ade80; cursor: pointer; font-weight: 600; transition: all 0.2s ease;">Extract DOM</button>
                 </div>
-
-                <div class="status-container">
+                
+                <div class="status-container" style="margin-top: 2rem;">
                     <div class="status-indicator" id="statusDot"></div>
                     <span id="statusText">System Ready</span>
                 </div>

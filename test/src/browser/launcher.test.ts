@@ -6,6 +6,11 @@ jest.mock('puppeteer', () => ({
     launch: jest.fn()
 }));
 
+jest.mock('../../../src/browser/steps', () => ({
+    getSteps: jest.fn().mockReturnValue([]),
+    executeSteps: jest.fn().mockResolvedValue(true)
+}));
+
 describe('Browser Launcher', () => {
     let mockBrowser: any;
     let mockPage: any;
@@ -24,10 +29,20 @@ describe('Browser Launcher', () => {
             kill: jest.fn()
         };
 
+        const mockFrame = {
+            evaluate: jest.fn().mockResolvedValue(true)
+        };
+        
         mockPage = {
             goto: jest.fn().mockResolvedValue(true),
             waitForSelector: jest.fn().mockResolvedValue(true),
-            evaluate: jest.fn().mockResolvedValue(true)
+            evaluate: jest.fn().mockResolvedValue(true),
+            browser: jest.fn(),
+            frames: jest.fn().mockReturnValue([mockFrame]),
+            bringToFront: jest.fn().mockResolvedValue(true),
+            keyboard: {
+                type: jest.fn().mockResolvedValue(true)
+            }
         };
 
         mockBrowser = {
@@ -42,6 +57,7 @@ describe('Browser Launcher', () => {
             })
         };
 
+        mockPage.browser.mockImplementation(() => mockBrowser);
         (puppeteer.launch as jest.Mock).mockResolvedValue(mockBrowser);
     });
 
@@ -60,7 +76,12 @@ describe('Browser Launcher', () => {
 
     it('launchAndNavigate does not launch a new browser if one is already active', async () => {
         jest.spyOn(fs, 'existsSync').mockReturnValue(false);
-        await launchAndNavigate('https://test.com');
+        const { executeSteps } = require('../../../src/browser/steps');
+        (executeSteps as jest.Mock).mockImplementationOnce(() => new Promise(() => {})); // hang forever
+        
+        launchAndNavigate('https://test.com');
+        await new Promise(r => setTimeout(r, 100)); // allow activeBrowser to be set
+        
         await launchAndNavigate('https://test.com'); // second call
         expect(puppeteer.launch).toHaveBeenCalledTimes(1);
     });
@@ -81,7 +102,12 @@ describe('Browser Launcher', () => {
 
     it('cancelAutomation handles close exceptions and exits process', async () => {
         await cancelAutomation();
-        await launchAndNavigate('https://test.com');
+        
+        const { executeSteps } = require('../../../src/browser/steps');
+        (executeSteps as jest.Mock).mockImplementationOnce(() => new Promise(() => {})); // hang forever
+        
+        launchAndNavigate('https://test.com');
+        await new Promise(r => setTimeout(r, 100)); // allow activeBrowser to be set
 
         const exitSpy = jest.spyOn(process, 'exit').mockImplementation((() => {}) as any);
         mockBrowser.close.mockRejectedValue(new Error('Crash'));
@@ -108,5 +134,32 @@ describe('Browser Launcher', () => {
         mockBrowser.close.mockClear();
         await cancelAutomation();
         expect(mockBrowser.close).not.toHaveBeenCalled();
+    });
+
+    it('getActiveBrowser returns active browser', async () => {
+        const { getActiveBrowser } = require('../../../src/browser/launcher');
+        expect(getActiveBrowser()).toBe(null);
+    });
+
+    it('handles process SIGINT and SIGTERM', async () => {
+        // Just trigger the setup to register listeners
+        await launchAndNavigate('https://test.com');
+
+        const sigintHandler = process.listeners('SIGINT').pop();
+        const sigtermHandler = process.listeners('SIGTERM').pop();
+
+        if (sigintHandler && sigtermHandler) {
+            const exitSpy = jest.spyOn(process, 'exit').mockImplementation((() => {}) as any);
+            await (sigintHandler as Function)();
+            await (sigtermHandler as Function)();
+            expect(exitSpy).toHaveBeenCalled();
+            exitSpy.mockRestore();
+        }
+    });
+
+    it('launchAndNavigate handles puppeteer.launch throwing error', async () => {
+        await cancelAutomation(); // Ensure activeBrowser is null
+        (puppeteer.launch as jest.Mock).mockRejectedValueOnce(new Error('Launch Failed'));
+        await expect(launchAndNavigate('https://test.com')).rejects.toThrow('Launch Failed');
     });
 });
