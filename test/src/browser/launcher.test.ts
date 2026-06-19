@@ -136,9 +136,15 @@ describe('Browser Launcher', () => {
         expect(mockBrowser.close).not.toHaveBeenCalled();
     });
 
-    it('getActiveBrowser returns active browser', async () => {
+    it('getActiveBrowser returns active browser and does not close on completion', async () => {
         const { getActiveBrowser } = require('../../../src/browser/launcher');
         expect(getActiveBrowser()).toBe(null);
+
+        await launchAndNavigate('https://test.com');
+
+        // Browser should remain open after successful completion
+        expect(getActiveBrowser()).not.toBe(null);
+        expect(mockBrowser.close).not.toHaveBeenCalled();
     });
 
     it('handles process SIGINT and SIGTERM', async () => {

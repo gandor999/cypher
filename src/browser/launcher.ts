@@ -69,8 +69,6 @@ export async function launchAndNavigate(targetUrl: string): Promise<void> {
         /* istanbul ignore else */
         if (activeBrowser) {
             logger.info(LOG_MESSAGES.AUTOMATION_COMPLETE);
-            await activeBrowser.close();
-            activeBrowser = null;
         }
     }
 }
