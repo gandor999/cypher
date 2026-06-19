@@ -2,6 +2,8 @@ import request from 'supertest';
 import { app } from '../../../src/server';
 import * as browser from '../../../src/browser';
 
+import { TARGET_URL } from '../../../src/constants';
+
 jest.mock('../../../src/browser', () => ({
     launchAndNavigate: jest.fn().mockResolvedValue(true),
     cancelAutomation: jest.fn().mockResolvedValue(true)
@@ -12,15 +14,19 @@ describe('GUI API Routes', () => {
         const res = await request(app).post('/api/start-automation');
         expect(res.status).toBe(200);
         expect(res.body.success).toBe(true);
-        expect(browser.launchAndNavigate).toHaveBeenCalledWith('https://test.com', undefined);
+        expect(browser.launchAndNavigate).toHaveBeenCalledWith(TARGET_URL);
     });
 
     it('POST /api/start-automation should handle errors', async () => {
-        (browser.launchAndNavigate as jest.Mock).mockRejectedValueOnce(new Error('Fail'));
+        (browser.launchAndNavigate as jest.Mock).mockImplementation(() => { throw new Error('Sync fail'); });
         const res = await request(app).post('/api/start-automation');
-        // It returns 200 immediately, but logs the error in the background.
         expect(res.status).toBe(200);
-        // Wait for microtasks to finish the rejection
+    });
+
+    it('POST /api/start-automation should handle async errors', async () => {
+        (browser.launchAndNavigate as jest.Mock).mockRejectedValueOnce(new Error('Async fail'));
+        const res = await request(app).post('/api/start-automation');
+        expect(res.status).toBe(200);
         await new Promise((resolve) => setTimeout(resolve, 0));
     });
 
