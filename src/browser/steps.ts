@@ -25,6 +25,26 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
 
         const selector = elInstance.getSelector();
 
+        if (step.element.type === 'WaitElement' && elInstance.id === 'waitFlag') {
+            logger.info('Automation paused. Waiting for a tab to be closed...');
+            const browser = page.browser();
+            let initialPagesCount = (await browser.pages()).length;
+
+            while (true) {
+                const currentPagesCount = (await browser.pages()).length;
+                if (currentPagesCount < initialPagesCount) {
+                    break;
+                }
+                // If the user hasn't opened the popup yet, or opens a new tab, adjust the baseline
+                if (currentPagesCount > initialPagesCount) {
+                    initialPagesCount = currentPagesCount;
+                }
+                await new Promise((r) => setTimeout(r, 500));
+            }
+            logger.info('Tab closed. Resuming automation...');
+            continue;
+        }
+
         logger.info(LOG_MESSAGES.LOOKING_FOR_ELEMENT(descriptor, step.index));
 
         // Wait briefly for the DOM or frames to settle before searching
@@ -42,15 +62,23 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
 
                 for (const frame of frames) {
                     try {
+                        const isWait = step.element.type === 'WaitElement';
+                        if (isWait && retry === 0) {
+                            logger.info(
+                                `Automation paused. Waiting for you to manually interact with "${descriptor}"...`
+                            );
+                        }
+
                         // Ignore cross-origin frame execution errors, proceed to next frame
-                        clicked = await frame.evaluate(
-                            (queryText, stepIndex, selectorStr) => {
+                        const result = await frame.evaluate(
+                            (queryText, stepIndex, selectorStr, elementType) => {
                                 const els = Array.from(document.querySelectorAll(selectorStr));
                                 const matches = els.filter((el) => {
                                     if (queryText) {
                                         const elAny = el as any;
                                         const text = (
                                             elAny.innerText ||
+                                            elAny.textContent ||
                                             elAny.value ||
                                             elAny.placeholder ||
                                             el.getAttribute('aria-label') ||
@@ -65,21 +93,43 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
                                     return true;
                                 });
 
-                                const targetBtn = matches[stepIndex];
+                                // CRITICAL FIX: Filter out parent containers.
+                                // If a node matches, but it contains a child that ALSO matches,
+                                // we only want the deeply-nested child (the actual button).
+                                const leafMatches = matches.filter((el) => {
+                                    return !matches.some((child) => child !== el && el.contains(child));
+                                });
+
+                                const targetBtn = leafMatches[stepIndex] || matches[stepIndex];
                                 if (targetBtn) {
-                                    (targetBtn as HTMLElement).focus();
-                                    (targetBtn as HTMLElement).click();
-                                    return true;
+                                    if (elementType === 'WaitElement') {
+                                        // Wait for the user to manually click it
+                                        return new Promise<any>((resolve) => {
+                                            targetBtn.addEventListener(
+                                                'click',
+                                                () => {
+                                                    resolve({ clicked: true });
+                                                },
+                                                { once: true }
+                                            );
+                                        });
+                                    } else {
+                                        (targetBtn as HTMLElement).focus();
+                                        (targetBtn as HTMLElement).click();
+                                        return { clicked: true };
+                                    }
                                 }
-                                return false;
+                                return null;
                             },
                             elInstance.text,
                             step.index,
-                            selector
+                            selector,
+                            step.element.type
                         );
 
-                        if (clicked) {
+                        if (result) {
                             activePage = p; // We found the element in this specific page/tab
+                            clicked = true;
                             break; // Stop searching frames
                         }
                     } catch (e) {

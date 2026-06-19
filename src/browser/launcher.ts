@@ -31,7 +31,7 @@ export async function launchAndNavigate(targetUrl: string): Promise<void> {
     const launchOptions: any = {
         headless: false,
         defaultViewport: null,
-        args: ['--start-maximized']
+        args: ['--start-maximized', '--no-sandbox', '--disable-blink-features=AutomationControlled']
     };
 
     if (chromePath) {

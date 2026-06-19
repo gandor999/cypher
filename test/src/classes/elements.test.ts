@@ -1,4 +1,11 @@
-import { ElementFactory, ButtonElement, GenericElement, InputElement } from '../../../src/classes/elements';
+import {
+    ElementFactory,
+    ButtonElement,
+    GenericElement,
+    InputElement,
+    WaitElement,
+    FlutterElement
+} from '../../../src/classes/elements';
 
 describe('Elements Factory & Classes', () => {
     it('creates a GenericElement for unknown types', () => {
@@ -50,5 +57,27 @@ describe('Elements Factory & Classes', () => {
     it('BaseElement constructor with undefined metadata', () => {
         const el = new GenericElement(undefined);
         expect(el.getSelector()).toBe('a, button, span, div, input');
+    });
+
+    it('creates a WaitElement for WaitElement type', () => {
+        const el = ElementFactory.create('WaitElement', { id: 'waitFlag' });
+        expect(el).toBeInstanceOf(WaitElement);
+        expect(el.id).toBe('waitFlag');
+    });
+
+    it('creates a FlutterElement for FlutterElement type', () => {
+        const el = ElementFactory.create('FlutterElement', { text: 'Portfolio' });
+        expect(el).toBeInstanceOf(FlutterElement);
+        expect(el.text).toBe('Portfolio');
+    });
+
+    it('FlutterElement selector fallback', () => {
+        const el = new FlutterElement({});
+        expect(el.getSelector()).toBe('flt-semantics, flt-semantics-placeholder');
+    });
+
+    it('BaseElement selector generator by custom selector', () => {
+        const el = new GenericElement({ selector: 'ul > li > a' });
+        expect(el.getSelector()).toBe('ul > li > a');
     });
 });

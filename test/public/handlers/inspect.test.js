@@ -23,6 +23,9 @@ describe('Inspect Button Handler', () => {
 
         // Mock timers
         jest.useFakeTimers();
+
+        // Silence console.error for expected failures
+        jest.spyOn(console, 'error').mockImplementation(() => {});
     });
 
     afterEach(() => {
