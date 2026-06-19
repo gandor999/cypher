@@ -30,21 +30,7 @@ STEPS_FILE_PATH=steps/steps.json
 
 Define exactly what elements to click and in what order using the `steps.json` file. The engine uses an `ElementFactory` to map JSON types directly into TypeScript objects.
 
-```json
-[
-  {
-    "element": {
-      "type": "ButtonElement",
-      "metadata": {
-        "text": "Log In",
-        "id": "login-btn",
-        "class": "btn-primary"
-      }
-    },
-    "index": 0
-  }
-]
-```
+For a full breakdown of the supported Element types, metadata fields, and configuration examples, please see the [Configuration Documentation](./docs/configuration.md).
 
 ## Running the Application
 
