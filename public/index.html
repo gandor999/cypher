@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoTrade Automation Controller</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="ambient-background"></div>
+    <div class="container">
+        <div class="glass-card">
+            <div class="header">
+                <div class="logo-circle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                    </svg>
+                </div>
+                <h1>GoTrade Controller</h1>
+                <p>Automated trading initialization</p>
+            </div>
+            
+            <div class="actions">
+                <button id="startBtn" class="premium-btn">
+                    <span class="btn-text">Start Automation</span>
+                    <div class="btn-glow"></div>
+                </button>
+            </div>
+
+            <div class="status-container">
+                <div class="status-indicator" id="statusDot"></div>
+                <span id="statusText">System Ready</span>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
