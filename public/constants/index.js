@@ -23,6 +23,7 @@ export const API_ENDPOINTS = {
 };
 
 export const INSPECT_FAILED_TEXT = 'Failed';
+export const INSPECT_SUCCESS_TEXT = 'Extract Successful';
 export const INSPECT_DEFAULT_TEXT = 'Extract DOM';
 
 export const THEME_COLORS = {

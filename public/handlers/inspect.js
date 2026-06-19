@@ -1,4 +1,4 @@
-import { INSPECT_FAILED_TEXT, INSPECT_DEFAULT_TEXT, THEME_COLORS } from '../constants/index.js';
+import { INSPECT_FAILED_TEXT, INSPECT_SUCCESS_TEXT, INSPECT_DEFAULT_TEXT, THEME_COLORS } from '../constants/index.js';
 
 export function setupInspectButton(ui) {
     if (!ui.inspectBtn) return;
@@ -14,6 +14,10 @@ export function setupInspectButton(ui) {
                 ui.inspectBtn.textContent = INSPECT_FAILED_TEXT;
                 ui.inspectBtn.style.color = THEME_COLORS.ERROR;
                 ui.inspectBtn.style.borderColor = THEME_COLORS.ERROR;
+            } else {
+                ui.inspectBtn.textContent = INSPECT_SUCCESS_TEXT;
+                ui.inspectBtn.style.color = THEME_COLORS.SUCCESS;
+                ui.inspectBtn.style.borderColor = THEME_COLORS.SUCCESS;
             }
         } catch (error) {
             console.error('Inspection failed:', error);
