@@ -13,7 +13,7 @@ app.use(express.json());
 app.use('/api', guiRoutes);
 
 export function startServer(port = 3000): void {
-  app.listen(port, () => {
-    logger.info(`GUI Server running! Open http://localhost:${port} in your browser.`);
-  });
+    app.listen(port, () => {
+        logger.info(`GUI Server running! Open http://localhost:${port} in your browser.`);
+    });
 }
