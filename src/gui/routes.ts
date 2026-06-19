@@ -39,7 +39,7 @@ router.get('/inspect', async (req, res) => {
     logger.info(LOG_MESSAGES.REQ_EXTRACT_AST);
     try {
         const ast = await getLivePageJsonAST(getActiveBrowser());
-        
+
         const logsDir = path.join(process.cwd(), 'logs');
         if (!fs.existsSync(logsDir)) {
             fs.mkdirSync(logsDir, { recursive: true });
@@ -48,7 +48,7 @@ router.get('/inspect', async (req, res) => {
 
         fs.writeFileSync(logFile, JSON.stringify(ast, null, 4), 'utf-8');
         logger.info(LOG_MESSAGES.AST_WRITTEN);
-        
+
         res.json({ success: true });
     } catch (error: any) {
         logger.error(`Inspect failed: ${error.message}`);

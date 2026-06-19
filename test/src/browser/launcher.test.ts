@@ -32,7 +32,7 @@ describe('Browser Launcher', () => {
         const mockFrame = {
             evaluate: jest.fn().mockResolvedValue(true)
         };
-        
+
         mockPage = {
             goto: jest.fn().mockResolvedValue(true),
             waitForSelector: jest.fn().mockResolvedValue(true),
@@ -78,10 +78,10 @@ describe('Browser Launcher', () => {
         jest.spyOn(fs, 'existsSync').mockReturnValue(false);
         const { executeSteps } = require('../../../src/browser/steps');
         (executeSteps as jest.Mock).mockImplementationOnce(() => new Promise(() => {})); // hang forever
-        
+
         launchAndNavigate('https://test.com');
-        await new Promise(r => setTimeout(r, 100)); // allow activeBrowser to be set
-        
+        await new Promise((r) => setTimeout(r, 100)); // allow activeBrowser to be set
+
         await launchAndNavigate('https://test.com'); // second call
         expect(puppeteer.launch).toHaveBeenCalledTimes(1);
     });
@@ -102,12 +102,12 @@ describe('Browser Launcher', () => {
 
     it('cancelAutomation handles close exceptions and exits process', async () => {
         await cancelAutomation();
-        
+
         const { executeSteps } = require('../../../src/browser/steps');
         (executeSteps as jest.Mock).mockImplementationOnce(() => new Promise(() => {})); // hang forever
-        
+
         launchAndNavigate('https://test.com');
-        await new Promise(r => setTimeout(r, 100)); // allow activeBrowser to be set
+        await new Promise((r) => setTimeout(r, 100)); // allow activeBrowser to be set
 
         const exitSpy = jest.spyOn(process, 'exit').mockImplementation((() => {}) as any);
         mockBrowser.close.mockRejectedValue(new Error('Crash'));

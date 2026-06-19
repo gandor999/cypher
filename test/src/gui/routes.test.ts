@@ -8,13 +8,21 @@ jest.mock('../../../src/browser', () => ({
     cancelAutomation: jest.fn().mockResolvedValue(true)
 }));
 
-jest.mock('../../../src/browser/launcher', () => ({
-    getActiveBrowser: jest.fn().mockReturnValue(true)
-}), { virtual: true });
+jest.mock(
+    '../../../src/browser/launcher',
+    () => ({
+        getActiveBrowser: jest.fn().mockReturnValue(true)
+    }),
+    { virtual: true }
+);
 
-jest.mock('../../../src/browser/util', () => ({
-    getLivePageJsonAST: jest.fn().mockResolvedValue({ tag: 'body' })
-}), { virtual: true });
+jest.mock(
+    '../../../src/browser/util',
+    () => ({
+        getLivePageJsonAST: jest.fn().mockResolvedValue({ tag: 'body' })
+    }),
+    { virtual: true }
+);
 
 describe('GUI API Routes', () => {
     it('POST /api/start-automation should call launchAndNavigate', async () => {
@@ -25,7 +33,9 @@ describe('GUI API Routes', () => {
     });
 
     it('POST /api/start-automation should handle errors', async () => {
-        (browser.launchAndNavigate as jest.Mock).mockImplementation(() => { throw new Error('Sync fail'); });
+        (browser.launchAndNavigate as jest.Mock).mockImplementation(() => {
+            throw new Error('Sync fail');
+        });
         const res = await request(app).post('/api/start-automation');
         expect(res.status).toBe(200);
     });
@@ -61,16 +71,16 @@ describe('GUI API Routes', () => {
 
         const launcherMock = require('../../../src/browser/launcher');
         const utilMock = require('../../../src/browser/util');
-        
+
         launcherMock.getActiveBrowser.mockReturnValue(true);
         utilMock.getLivePageJsonAST.mockResolvedValue({ tag: 'body' });
 
         const res = await request(app).get('/api/inspect');
         expect(res.status).toBe(200);
         expect(res.body.success).toBe(true);
-        
+
         expect(mkdirSpy).toHaveBeenCalled();
-        
+
         existsSyncSpy.mockRestore();
         mkdirSpy.mockRestore();
         writeSpy.mockRestore();
@@ -79,10 +89,10 @@ describe('GUI API Routes', () => {
     it('GET /api/inspect should return 500 when activeBrowser is null', async () => {
         const launcherMock = require('../../../src/browser/launcher');
         const utilMock = require('../../../src/browser/util');
-        
+
         launcherMock.getActiveBrowser.mockReturnValue(null);
         utilMock.getLivePageJsonAST.mockRejectedValue(new Error('No active browser running.'));
-        
+
         const res = await request(app).get('/api/inspect');
         expect(res.status).toBe(500);
         expect(res.body.success).toBe(false);
@@ -92,10 +102,10 @@ describe('GUI API Routes', () => {
     it('GET /api/inspect should handle errors', async () => {
         const launcherMock = require('../../../src/browser/launcher');
         const utilMock = require('../../../src/browser/util');
-        
+
         launcherMock.getActiveBrowser.mockReturnValue(true);
         utilMock.getLivePageJsonAST.mockRejectedValue(new Error('AST fail'));
-        
+
         const res = await request(app).get('/api/inspect');
         expect(res.status).toBe(500);
         expect(res.body.success).toBe(false);
@@ -110,16 +120,16 @@ describe('GUI API Routes', () => {
 
         const launcherMock = require('../../../src/browser/launcher');
         const utilMock = require('../../../src/browser/util');
-        
+
         launcherMock.getActiveBrowser.mockReturnValue(true);
         utilMock.getLivePageJsonAST.mockResolvedValue({ tag: 'body' });
 
         const res = await request(app).get('/api/inspect');
         expect(res.status).toBe(200);
         expect(res.body.success).toBe(true);
-        
+
         expect(mkdirSpy).not.toHaveBeenCalled();
-        
+
         existsSyncSpy.mockRestore();
         mkdirSpy.mockRestore();
         writeSpy.mockRestore();

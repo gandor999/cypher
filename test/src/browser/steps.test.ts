@@ -45,7 +45,7 @@ describe('Steps Logic', () => {
 
     it('executeSteps logs warning if element is not clicked', async () => {
         const { mockPage, mockFrame } = createMockPage('false'); // evaluate returns false so it loops 30 times
-        
+
         await executeSteps(mockPage as any, [
             {
                 index: 0,
@@ -57,30 +57,28 @@ describe('Steps Logic', () => {
 
     it('executeSteps descriptor fallback logic', async () => {
         const { mockPage, mockFrame } = createMockPage('true'); // evaluate returns true
-        
+
         // fallback to cssClass
         await executeSteps(mockPage as any, [
             { index: 0, element: { type: 'GenericElement', metadata: { class: 'test-class' } } }
         ]);
-        
+
         // fallback to type
-        await executeSteps(mockPage as any, [
-            { index: 0, element: { type: 'GenericElement', metadata: {} } }
-        ]);
-        
+        await executeSteps(mockPage as any, [{ index: 0, element: { type: 'GenericElement', metadata: {} } }]);
+
         expect(mockFrame.evaluate).toHaveBeenCalledTimes(2);
     });
 
     it('executeSteps handles InputElement and types text', async () => {
         const { mockPage, mockFrame } = createMockPage('true');
-        
+
         await executeSteps(mockPage as any, [
             {
                 index: 0,
                 element: { type: 'InputElement', metadata: { value: 'user@example.com' } }
             }
         ]);
-        
+
         expect(mockFrame.evaluate).toHaveBeenCalledTimes(1);
         expect(mockPage.bringToFront).toHaveBeenCalledTimes(1);
         expect(mockPage.keyboard.type).toHaveBeenCalledWith('user@example.com', { delay: 50 });
@@ -88,14 +86,14 @@ describe('Steps Logic', () => {
 
     it('executeSteps inner evaluate logic works with JSDOM mock', async () => {
         const { mockPage, mockFrame } = createMockPage('execute');
-        
+
         const mockEl = {
             innerText: 'Test Button',
             getAttribute: jest.fn().mockReturnValue(''),
             focus: jest.fn(),
             click: jest.fn()
         };
-        
+
         global.document = {
             querySelectorAll: jest.fn().mockReturnValue([mockEl])
         } as any;
@@ -103,7 +101,7 @@ describe('Steps Logic', () => {
         await executeSteps(mockPage as any, [
             { index: 0, element: { type: 'ButtonElement', metadata: { text: 'Test Button' } } }
         ]);
-        
+
         expect(mockEl.focus).toHaveBeenCalled();
         expect(mockEl.click).toHaveBeenCalled();
 
@@ -121,7 +119,7 @@ describe('Steps Logic', () => {
 
     it('executeSteps covers JSDOM filtering and out of bounds', async () => {
         const { mockPage, mockFrame } = createMockPage('execute');
-        
+
         // Element with innerText
         const mockElText = { innerText: 'Target', getAttribute: jest.fn().mockReturnValue('') };
         // Element with value
@@ -132,18 +130,18 @@ describe('Steps Logic', () => {
         const mockElAria = { getAttribute: jest.fn().mockReturnValue('Target') };
         // Element with nothing
         const mockElNothing = { getAttribute: jest.fn().mockReturnValue(null) };
-        
+
         global.document = {
-            querySelectorAll: jest.fn().mockReturnValue([
-                mockElText, mockElValue, mockElPlaceholder, mockElAria, mockElNothing
-            ])
+            querySelectorAll: jest
+                .fn()
+                .mockReturnValue([mockElText, mockElValue, mockElPlaceholder, mockElAria, mockElNothing])
         } as any;
 
         // Will match 'Target' via all different attributes, but since we are looking for index 9, it will fail and loop
         await executeSteps(mockPage as any, [
             { index: 9, element: { type: 'ButtonElement', metadata: { text: 'Target' } } }
         ]);
-        
+
         delete (global as any).document;
         // Since it loops waiting for click, evaluate is called 30 times
         expect(mockFrame.evaluate).toHaveBeenCalledTimes(30);
@@ -151,27 +149,27 @@ describe('Steps Logic', () => {
 
     it('executeSteps handles InputElement without value (defaults to empty string)', async () => {
         const { mockPage, mockFrame } = createMockPage('true');
-        
+
         await executeSteps(mockPage as any, [
             {
                 index: 0,
                 element: { type: 'InputElement', metadata: {} } // missing value!
             }
         ]);
-        
+
         expect(mockPage.keyboard.type).toHaveBeenCalledWith('', { delay: 50 });
     });
 
     it('executeSteps evaluate logic skips text check if queryText is falsy (line 50)', async () => {
         const { mockPage, mockFrame } = createMockPage('execute');
-        
+
         const mockEl = {
             innerText: 'Test Button',
             getAttribute: jest.fn().mockReturnValue(''),
             focus: jest.fn(),
             click: jest.fn()
         };
-        
+
         global.document = {
             querySelectorAll: jest.fn().mockReturnValue([mockEl])
         } as any;
@@ -180,7 +178,7 @@ describe('Steps Logic', () => {
         await executeSteps(mockPage as any, [
             { index: 0, element: { type: 'ButtonElement', metadata: { class: 'test-class' } } }
         ]);
-        
+
         expect(mockEl.focus).toHaveBeenCalled();
         expect(mockEl.click).toHaveBeenCalled();
 

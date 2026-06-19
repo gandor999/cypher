@@ -42,7 +42,7 @@ describe('Browser Util - getLivePageJsonAST', () => {
             ],
             childNodes: [mockTextNode]
         };
-        
+
         global.document = {
             body: {
                 childNodes: [mockEl]
@@ -72,7 +72,7 @@ describe('Browser Util - getLivePageJsonAST', () => {
     it('handles cross-origin frame evaluate error gracefully', async () => {
         const { mockBrowser, mockFrame } = createMockBrowser();
         mockFrame.evaluate.mockRejectedValue(new Error('cross origin'));
-        
+
         const ast = await getLivePageJsonAST(mockBrowser as any);
         // Returns empty since evaluate throws
         expect(ast).toEqual([]);
@@ -119,7 +119,7 @@ describe('Browser Util - getLivePageJsonAST', () => {
             attributes: [],
             childNodes: [mockTextNode1, mockTextNode2] // two children
         };
-        
+
         global.document = {
             body: {
                 childNodes: [mockEl]
@@ -180,8 +180,8 @@ describe('Browser Util - getLivePageJsonAST', () => {
         global.Node = { ELEMENT_NODE: 1, TEXT_NODE: 3 } as any;
 
         const scriptNode = { nodeType: 1, tagName: 'SCRIPT', attributes: [], childNodes: [] };
-        const styleNode  = { nodeType: 1, tagName: 'STYLE',  attributes: [], childNodes: [] };
-        const divNode    = { nodeType: 1, tagName: 'DIV',    attributes: [], childNodes: [] };
+        const styleNode = { nodeType: 1, tagName: 'STYLE', attributes: [], childNodes: [] };
+        const divNode = { nodeType: 1, tagName: 'DIV', attributes: [], childNodes: [] };
 
         global.document = { body: { childNodes: [scriptNode, styleNode, divNode] } } as any;
 
@@ -196,7 +196,7 @@ describe('Browser Util - getLivePageJsonAST', () => {
         global.Node = { ELEMENT_NODE: 1, TEXT_NODE: 3 } as any;
 
         // Mix of valid text and a comment node (returns null from parseNode)
-        const validText  = { nodeType: 3, textContent: 'visible' };
+        const validText = { nodeType: 3, textContent: 'visible' };
         const commentNode = { nodeType: 8 };
         const mockEl = {
             nodeType: 1,
@@ -218,7 +218,7 @@ describe('Browser Util - getLivePageJsonAST', () => {
         global.Node = { ELEMENT_NODE: 1, TEXT_NODE: 3 } as any;
 
         const node1 = { nodeType: 1, tagName: 'HEADER', attributes: [], childNodes: [] };
-        const node2 = { nodeType: 1, tagName: 'MAIN',   attributes: [], childNodes: [] };
+        const node2 = { nodeType: 1, tagName: 'MAIN', attributes: [], childNodes: [] };
 
         global.document = { body: { childNodes: [node1, node2] } } as any;
 
@@ -250,14 +250,13 @@ describe('Browser Util - getLivePageJsonAST', () => {
 
     it('skips pushing to results if frameAST is falsy (line 80)', async () => {
         const { mockBrowser, mockFrame } = createMockBrowser();
-        
+
         // Return null from evaluate so frameAST is falsy
         mockFrame.evaluate.mockResolvedValue(null);
-        
+
         const ast = await getLivePageJsonAST(mockBrowser as any);
-        
+
         // Since it's null, the astResults remains empty
         expect(ast).toEqual([]);
     });
 });
-

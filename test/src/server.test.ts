@@ -7,13 +7,21 @@ jest.mock('../../src/browser', () => ({
     cancelAutomation: jest.fn()
 }));
 
-jest.mock('../../src/browser/launcher', () => ({
-    getActiveBrowser: jest.fn()
-}), { virtual: true });
+jest.mock(
+    '../../src/browser/launcher',
+    () => ({
+        getActiveBrowser: jest.fn()
+    }),
+    { virtual: true }
+);
 
-jest.mock('../../src/browser/util', () => ({
-    getLivePageJsonAST: jest.fn()
-}), { virtual: true });
+jest.mock(
+    '../../src/browser/util',
+    () => ({
+        getLivePageJsonAST: jest.fn()
+    }),
+    { virtual: true }
+);
 
 describe('Server', () => {
     it('should start the server', () => {

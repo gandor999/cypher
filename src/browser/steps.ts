@@ -26,7 +26,7 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
         const selector = elInstance.getSelector();
 
         logger.info(LOG_MESSAGES.LOOKING_FOR_ELEMENT(descriptor, step.index));
-        
+
         // Wait briefly for the DOM or frames to settle before searching
         await new Promise((r) => setTimeout(r, 1000));
 
@@ -49,7 +49,13 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
                                 const matches = els.filter((el) => {
                                     if (queryText) {
                                         const elAny = el as any;
-                                        const text = (elAny.innerText || elAny.value || elAny.placeholder || el.getAttribute('aria-label') || '')
+                                        const text = (
+                                            elAny.innerText ||
+                                            elAny.value ||
+                                            elAny.placeholder ||
+                                            el.getAttribute('aria-label') ||
+                                            ''
+                                        )
                                             .replace(/\n/g, ' ')
                                             .trim();
                                         if (!text.includes(queryText)) {
@@ -93,7 +99,7 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
 
         if (clicked) {
             logger.info(LOG_MESSAGES.CLICKED_ELEMENT(descriptor));
-            
+
             if (step.element.type === 'InputElement') {
                 const inputValue = (elInstance as any).value || '';
                 logger.info(LOG_MESSAGES.TYPING_REDACTED);
@@ -103,7 +109,7 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
                 await activePage.bringToFront();
                 await activePage.keyboard.type(inputValue, { delay: 50 });
             }
-            
+
             // Wait briefly for any UI transitions or network requests to initiate
             await new Promise((r) => setTimeout(r, 2000));
         } else {
@@ -111,4 +117,3 @@ export async function executeSteps(page: Page, finalSteps: IClickStep[]): Promis
         }
     }
 }
-

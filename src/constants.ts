@@ -24,7 +24,8 @@ export const LOG_MESSAGES = {
     NO_ACTIVE_BROWSER: 'No active browser to cancel.',
     SIGINT_RECEIVED: 'Received SIGINT (Ctrl+C). Cleaning up...',
     SIGTERM_RECEIVED: 'Received SIGTERM. Cleaning up...',
-    LOOKING_FOR_ELEMENT: (descriptor: string, index: number) => `Looking for element "${descriptor}" (index ${index})...`,
+    LOOKING_FOR_ELEMENT: (descriptor: string, index: number) =>
+        `Looking for element "${descriptor}" (index ${index})...`,
     CLICKED_ELEMENT: (descriptor: string) => `Successfully clicked element "${descriptor}".`,
     TYPING_REDACTED: 'Typing [REDACTED] into input element in active tab...',
     REQ_START_AUTOMATION: 'Received request to start automation from GUI.',
