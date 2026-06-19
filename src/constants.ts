@@ -13,7 +13,7 @@ export const TARGET_URL = process.env.TARGET_URL || 'https://www.google.com';
 export const STEPS_FILE_PATH = process.env.STEPS_FILE_PATH || path.join(process.cwd(), 'steps', 'steps.json');
 
 export const LOG_MESSAGES = {
-    AUTOMATION_COMPLETE: 'Automation sequence complete. Closing browser automatically...',
+    AUTOMATION_COMPLETE: 'Automation sequence complete. Leaving browser open...',
     BROWSER_RUNNING: 'Browser is already running.',
     TARGET_URL: (url: string) => `Target URL: ${url}`,
     FOUND_CHROME: (path: string) => `Found local Google Chrome at: ${path}`,
